@@ -1,0 +1,18 @@
+# Usamos una imagen base de Node.js
+FROM node:18-alpine  
+
+# Definir el directorio de trabajo dentro del contenedor
+WORKDIR /app  
+
+# Copiar los archivos necesarios
+COPY package.json ./  
+RUN npm install  
+
+# Copiar el resto del código
+COPY . .  
+
+# Exponer el puerto del servicio
+EXPOSE 2004  
+
+# Comando para iniciar la aplicación
+CMD ["npm", "start"]
