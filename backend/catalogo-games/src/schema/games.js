@@ -13,7 +13,7 @@ const gameSchemas = new mongoose.Schema({
     genero: { type: String, required: true },
     desarrollador: { type: String, required: true },
     editor: { type: String, required: true },
-    fecha_lanzamiento: { type: Date, required: true },
+    fecha_lanzamiento: { type: String, required: true },
     precio: { type: Number, required: true, min: 0 },
     plataformas: [{ type: String, required: true }],
     descripcion: { type: String, required: true },
