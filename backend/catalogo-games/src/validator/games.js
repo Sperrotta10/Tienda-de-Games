@@ -33,3 +33,21 @@ const gameSchemaZod = zod.object({
     enlace_trailer: zod.string().url("El enlace del trailer debe ser una URL válida"),
     portada: zod.string().url("La portada debe ser una URL válida"),
 });
+
+// funcion para validar lo datos cuando queremos crear un juego
+function validationGames(game) {
+        
+    const dataValidate = gameSchemaZod.parse(game);
+
+    return dataValidate;
+}
+
+// funcion para validar los datos cunado queremos actualizar juegos
+function validationGamesUpdate(game) {
+
+    const dataValidate = gameSchemaZod.partial().parse(game);
+
+    return dataValidate;
+}
+
+module.exports = {validationGames, validationGamesUpdate}
