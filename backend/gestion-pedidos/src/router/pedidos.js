@@ -6,7 +6,7 @@ const rutas = () => {
     // creamos el enrutador
     const routes = express.Router();
 
-    // ruta para crear el pedido
+    // ruta para crear el pedido ✅
     routes.post('/create-pedido', create_pedido)
 
     // ruta para obtener los pedidos
