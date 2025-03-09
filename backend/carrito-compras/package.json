@@ -16,6 +16,7 @@
     "@hapi/boom": "^10.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "joi": "^17.13.3",
     "pg": "^8.13.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
