@@ -1,0 +1,44 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "81:81"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - gestion-usuarios
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${USERS_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${USERS_MYSQL_DATABASE}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p", "rootpassword"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  gestion-usuarios:
+    build:
+      context: ./backend/gestion-usuarios
+    ports:
+      - "2004:2004"
+    volumes:
+      - ./backend/gestion-usuarios:/app
+    environment:
+      PORT: ${USERS_PORT}
+      DB_PORT: ${USERS_DB_PORT}
+      DB_HOST: ${USERS_DB_HOST}
+      DB_NAME: ${USERS_DB_NAME}
+      DB_USER: ${USERS_DB_USER}
+      DB_PASSWORD: ${USERS_DB_PASSWORD}
+    depends_on:
+      - mysql 
+
+volumes:
+  mysql_data:
