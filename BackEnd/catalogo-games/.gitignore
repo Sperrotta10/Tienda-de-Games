@@ -1,0 +1,5 @@
+# ignorar carpeta de node_modules
+node_modules/
+
+# ignorar archivos de configuracion local
+# .env (mas adelante cuando el proyecto este finalizado, se debe de ocultar el .env)
