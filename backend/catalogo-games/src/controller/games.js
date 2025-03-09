@@ -118,7 +118,7 @@ const obtener_gameID = async (req,res) => {
     try {
 
         const getById = await GamesModel.getById(id_game)
-        return res.status(201).json({data: getById, message: "Juego obtenido exitosamente"});
+        return res.status(200).json({data: getById, message: "Juego obtenido exitosamente"});
 
     } catch (error) {
         
@@ -134,7 +134,7 @@ const obtener_gameName = async (req,res) => {
     try {
 
         const getNameGame = await GamesModel.getName(nameGame)
-        return res.status(201).json({data: getNameGame, message: "Juego obtenido exitosamente"});
+        return res.status(200).json({data: getNameGame, message: "Juego obtenido exitosamente"});
 
     } catch (error) {
         
