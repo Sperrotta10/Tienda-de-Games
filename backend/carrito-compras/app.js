@@ -1,10 +1,10 @@
 require('dotenv').config(); // Importar dotenv al inicio
 const express = require('express');
-const routerApi = require('./routes');
+const routerApi = require('./src/router');
 const cors = require('cors');
 const swaggerDocs = require('./swagger');
 
-const { logErrors, errorHandler, boomErrorHandler} = require('./middlewares/error_handler');
+const { logErrors, errorHandler, boomErrorHandler} = require('./src/middlewares/error_handler');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -21,10 +21,6 @@ const options = {
   }
 }
 app.use(cors(options));
-
-app.get('/carrito-compras', (req, res) => {
-  res.send('HOLA MUNDOOOO, primer server en express')
-});
 
 routerApi(app);
 

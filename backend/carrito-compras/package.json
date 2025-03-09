@@ -1,6 +1,20 @@
 {
+  "name": "carrito-compras",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "pg": "^8.13.3",
     "swagger-jsdoc": "^6.2.8",
