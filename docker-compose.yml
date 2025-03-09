@@ -1,0 +1,20 @@
+services:
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  catalogo-games:
+    build: ./backend/catalogo-games
+    ports:
+      - "2001:2001"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=${MONGO_URI_GAMES}
+
+volumes:
+  mongodb_data:
