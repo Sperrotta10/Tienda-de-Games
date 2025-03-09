@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 // routes del microservicio
-app.use('api/gestion-pedidos', rutas);
+app.use('api/gestion-pedidos', rutas());
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
