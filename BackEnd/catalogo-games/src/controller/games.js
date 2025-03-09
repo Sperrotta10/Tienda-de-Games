@@ -1,7 +1,7 @@
 const {GamesModel} = require('../model/games');
 const {validationGames, validationGamesUpdate} = require('../validator/games')
 
-// controlador solo para (administrador)
+// Controlador solo para (administrador)
 const create_game = async (req,res) => {
     
     const response = validationGames(req.body);
