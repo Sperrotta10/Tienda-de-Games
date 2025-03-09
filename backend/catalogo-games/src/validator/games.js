@@ -39,7 +39,7 @@ function validationGames(game) {
         
     const dataValidate = gameSchemaZod.parse(game);
 
-    return dataValidate;
+    return { success: true, data: dataValidate };
 }
 
 // funcion para validar los datos cunado queremos actualizar juegos
@@ -47,7 +47,7 @@ function validationGamesUpdate(game) {
 
     const dataValidate = gameSchemaZod.partial().parse(game);
 
-    return dataValidate;
+    return { success: true, data: dataValidate };
 }
 
 module.exports = {validationGames, validationGamesUpdate}

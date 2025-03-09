@@ -25,8 +25,8 @@ const gameSchemas = new mongoose.Schema({
     clasificacion_edad: { type: String, required: true },
     multijugador: { type: Boolean, required: true },
     cooperativo: { type: Boolean, required: true },
-    enlace_trailer: { type: String, required: true, match: /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/ },
-    portada: { type: String, required: true, match: /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/ }
+    enlace_trailer: { type: String, required: true},
+    portada: { type: String, required: true}
 });
 
 // creamos nuestro modelo y lo exportamos
