@@ -9,13 +9,13 @@ const rutas = () => {
     // ruta para crear el pedido ✅
     routes.post('/create-pedido', create_pedido)
 
-    // ruta para obtener los pedidos
+    // ruta para obtener los pedidos ✅
     routes.get('/get-pedido', obtener_pedido)
 
-    // ruta para obtener pedido por id
+    // ruta para obtener pedido por id ✅
     routes.get('/get-pedidoId/:id_pedido', obtener_pedidoID)
 
-    // ruta para obtener pedido por userId
+    // ruta para obtener pedido por userId ✅
     routes.get('/get-pedidoUserId/:id_user', obtener_pedidoUserID)
 
     return routes;
