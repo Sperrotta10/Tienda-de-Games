@@ -1,4 +1,3 @@
-const { response } = require('express');
 const {PedidoModel} = require('../model/pedidos');
 const {validationPedidos, validationPedidosUpdate} = require('../validator/pedidos')
 
