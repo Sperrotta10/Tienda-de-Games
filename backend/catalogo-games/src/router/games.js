@@ -42,22 +42,22 @@ const routes = () => {
     //api para crear juegos ✅
     routes.post('/create-game', create_game)
 
-    // api para eliminar juegos por su id
+    // api para eliminar juegos por su id ✅
     routes.delete('/delete-game/:id_game', delete_game)
 
-    // api para eliminar juegos por su nombre
+    // api para eliminar juegos por su nombre ✅
     routes.delete('/delete-Namegame/:nameGame', delete_gameName)
 
     // api para eliminar juegos por su nombre ✅
     routes.delete('/delete-allGame', delete_AllGame)
 
-    // api para actualizar juegos
-    routes.put('/update-game', update_game)
+    // api para actualizar juegos ✅
+    routes.put('/update-game/:id_game', update_game)
 
     // api para obtener juegos ✅
     routes.get('/get-games', obtener_game)
 
-    // api para obtener juegos por id
+    // api para obtener juegos por id ✅
     routes.get('/get-game/:id_game', obtener_gameID)
 
     // api para obtener juegos por nombre ✅
