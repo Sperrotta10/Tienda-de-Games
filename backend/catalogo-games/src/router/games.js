@@ -1,5 +1,5 @@
 const express = require('express');
-const {create_game, delete_game, delete_gameName, update_game, obtener_game, obtener_gameID, obtener_gameName} = require('../controller/games')
+const {create_game, delete_game, delete_gameName, delete_AllGame, update_game, obtener_game, obtener_gameID, obtener_gameName} = require('../controller/games')
 
 // TEMPORAL
 const {validationGames} = require('../validator/games') // temporal
@@ -47,6 +47,9 @@ const routes = () => {
 
     // api para eliminar juegos por su nombre
     routes.delete('/delete-game/:nameGame', delete_gameName)
+
+    // api para eliminar juegos por su nombre
+    routes.delete('/delete-allGame', delete_AllGame)
 
     // api para actualizar juegos
     routes.put('/update-game', update_game)
