@@ -6,18 +6,20 @@ const dotenv = require('dotenv');
 // cargar el archivo .env
 dotenv.config();
 
+const PORT = process.env.PORT // definimos el puerto del servidor
+
 // levantamos el servidor
 const app = express();
 
 app.use(express.json());
 
 // routes del microservicio
-app.use('api/gestion-pedidos', rutas());
+app.use('/api/gestion-pedidos', rutas());
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("✅ Servicio de catalogo de juegos Conectado a mongodb");
-        app.listen(process.env.PORT, () => {
+        app.listen(PORT, () => {
             console.log(`Servidor esta corriendo en el puerto http://localhost:${PORT}`)
         });
     })
