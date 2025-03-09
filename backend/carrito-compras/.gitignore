@@ -215,7 +215,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Ignorar la carpeta archivos-postgres y todo su contenido
-/backend/carrito-compras/archivos-postgres/
+# Ignorar la carpeta postgres_data en la raíz del proyecto
+/../postgres_data/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,linux,macos
