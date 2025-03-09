@@ -78,6 +78,21 @@ const delete_gameName = async (req,res) => {
     }
 }
 
+// controlador solo para (administrador)
+const delete_AllGame = async (req,res) => {
+
+    try {
+
+        const deleteGame = await GamesModel.deleteAll()
+        return res.status(200).json({data: deleteGame, message: "Juegos eliminados exitosamente"});
+
+    } catch (error) {
+        
+        console.error("Error al eliminar los juegos", error)
+        res.status(500).json({message : error.message})
+    }
+}
+
 
 // controladores para cualquier usuario pero que este autentificado
 
@@ -129,7 +144,7 @@ const obtener_gameName = async (req,res) => {
 }
 
 module.exports = {
-    create_game, update_game, delete_game, delete_gameName, obtener_game, obtener_gameID, obtener_gameName
+    create_game, update_game, delete_game, delete_gameName, delete_AllGame, obtener_game, obtener_gameID, obtener_gameName
 }
 
 
