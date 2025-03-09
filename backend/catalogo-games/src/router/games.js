@@ -39,29 +39,29 @@ const routes = () => {
         }
     })
 
-    //api para crear juegos
+    //api para crear juegos ✅
     routes.post('/create-game', create_game)
 
     // api para eliminar juegos por su id
     routes.delete('/delete-game/:id_game', delete_game)
 
     // api para eliminar juegos por su nombre
-    routes.delete('/delete-game/:nameGame', delete_gameName)
+    routes.delete('/delete-Namegame/:nameGame', delete_gameName)
 
-    // api para eliminar juegos por su nombre
+    // api para eliminar juegos por su nombre ✅
     routes.delete('/delete-allGame', delete_AllGame)
 
     // api para actualizar juegos
     routes.put('/update-game', update_game)
 
-    // api para obtener juegos
+    // api para obtener juegos ✅
     routes.get('/get-games', obtener_game)
 
     // api para obtener juegos por id
-    routes.get('/get-games/:id_game', obtener_gameID)
+    routes.get('/get-game/:id_game', obtener_gameID)
 
-    // api para obtener juegos por nombre
-    routes.get('/get-games/:nameGame', obtener_gameName)
+    // api para obtener juegos por nombre ✅
+    routes.get('/get-Namegame/:nameGame', obtener_gameName)
 
     return routes;
 }
