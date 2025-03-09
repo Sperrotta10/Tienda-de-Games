@@ -36,6 +36,7 @@ gameSchemas.set('toJSON', {
     transform: function (doc, ret) {
       // Define el orden de los campos
       return {
+        _id: ret._id,
         titulo: ret.titulo,
         genero: ret.genero,
         desarrollador: ret.desarrollador,
