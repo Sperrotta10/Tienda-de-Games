@@ -56,6 +56,19 @@ class GamesModel {
         }
     }
 
+    static async deleteAll() {
+        try {
+            
+            const result = await Game.deleteMany({});
+            return result;
+
+        } catch (error) {
+            
+            throw new Error("Error al eliminar Juego", error.message);
+            
+        }
+    }
+
     static async getAll() {
 
         try {
