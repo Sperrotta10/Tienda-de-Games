@@ -1,0 +1,20 @@
+services:
+  mongodb3:
+    image: mongo:4.4
+    container_name: mongodb3
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodb_data3:/data/db
+
+  gestion-pedidos:
+    build: ./backend/gestion-pedidos
+    ports:
+      - "2003:2003"
+    depends_on:
+      - mongodb3
+    environment:
+      - MONGO_URI=${MONGO_URI_PEDIDOS}
+
+volumes:
+  mongodb_data3:
