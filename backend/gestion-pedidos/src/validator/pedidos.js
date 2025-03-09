@@ -3,7 +3,7 @@ const zod = require('zod');
 // Definir el esquema de validación con Zod
 const pedidoSchemaZod = zod.object({
 
-    usuarioId: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
+    usuarioId: zod.string().min(1, "El ID del Usuario es requerido"),
     items: zod.array(zod.object({
 
         juegoId: zod.string().min(1, "El ID del juego es requerido"),
@@ -37,4 +37,4 @@ function validationPedidosUpdate(pedido) {
     return { success: true, data: dataValidate };
 }
 
-module.exports = {validationPedidos, validationPedidossUpdate}
+module.exports = {validationPedidos, validationPedidosUpdate}
