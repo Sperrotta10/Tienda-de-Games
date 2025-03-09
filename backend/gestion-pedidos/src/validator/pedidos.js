@@ -30,7 +30,7 @@ function validationPedidos(pedido) {
 }
 
 // funcion para validar los datos cunado queremos actualizar juegos
-function validationPedidossUpdate(pedido) {
+function validationPedidosUpdate(pedido) {
 
     const dataValidate = pedidoSchemaZod.partial().parse(pedido);
 
