@@ -9,7 +9,7 @@ const path = require('path');
 
 // Cargar el archivo JSON (TEMPORAL)
 const gamesData = JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'games.json'), 'utf-8')
+    fs.readFileSync(path.join(__dirname, 'catalogo.json'), 'utf-8')
 );
 
 const routes = () => {
@@ -63,4 +63,4 @@ const routes = () => {
     return routes;
 }
 
-module.exports = {routes}
+module.exports = routes;
