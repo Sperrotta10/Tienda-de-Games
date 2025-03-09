@@ -1,7 +1,6 @@
-version: '3'
 services:
   mongodb:
-    image: mongo
+    image: mongo:4.4
     container_name: mongodb
     ports:
       - "27017:27017"
@@ -9,7 +8,7 @@ services:
       - mongodb_data:/data/db
 
   catalogo-games:
-    build: ./catalogo-games
+    build: ./backend/catalogo-games
     ports:
       - "2001:2001"
     depends_on:
