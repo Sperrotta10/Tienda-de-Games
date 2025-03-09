@@ -1,0 +1,962 @@
+[
+    {
+      "titulo": "The Legend of Zelda: Breath of the Wild",
+      "genero": "Acción/Aventura",
+      "desarrollador": "Nintendo",
+      "editor": "Nintendo",
+      "fecha_lanzamiento": "2017-03-03",
+      "precio": 59.99,
+      "plataformas": ["Nintendo Switch", "Wii U"],
+      "descripcion": "Embárcate en una aventura épica en un mundo abierto lleno de misterios y desafíos.",
+      "requisitos_sistema": {
+        "minimos": {
+          "sistema_operativo": "N/A",
+          "procesador": "N/A",
+          "memoria": "N/A",
+          "graficos": "N/A",
+          "almacenamiento": "13.4 GB"
+        },
+        "recomendados": {
+          "sistema_operativo": "N/A",
+          "procesador": "N/A",
+          "memoria": "N/A",
+          "graficos": "N/A",
+          "almacenamiento": "13.4 GB"
+        }
+      },
+      "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Japonés"],
+      "clasificacion_edad": "PEGI 12",
+      "multijugador": false,
+      "cooperativo": false,
+      "enlace_trailer": "https://www.youtube.com/watch?v=1rPxiXXxftE",
+      "portada": "https://example.com/zelda_breath_of_the_wild.jpg"
+    },
+    {
+      "titulo": "The Witcher 3: Wild Hunt",
+      "genero": "Rol (RPG)",
+      "desarrollador": "CD Projekt Red",
+      "editor": "CD Projekt",
+      "fecha_lanzamiento": "2015-05-19",
+      "precio": 39.99,
+      "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+      "descripcion": "Acompaña al cazador de monstruos Geralt de Rivia en una aventura épica en un mundo abierto lleno de decisiones y consecuencias.",
+      "requisitos_sistema": {
+        "minimos": {
+          "sistema_operativo": "Windows 7 64-bit",
+          "procesador": "Intel Core i5-2500K 3.3GHz / AMD Phenom II X4 940",
+          "memoria": "6 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870",
+          "almacenamiento": "35 GB de espacio disponible"
+        },
+        "recomendados": {
+          "sistema_operativo": "Windows 10 64-bit",
+          "procesador": "Intel Core i7 3770 3.4GHz / AMD FX-8350 4GHz",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 770 / AMD Radeon R9 290",
+          "almacenamiento": "35 GB de espacio disponible"
+        }
+      },
+      "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Polaco"],
+      "clasificacion_edad": "PEGI 18",
+      "multijugador": false,
+      "cooperativo": false,
+      "enlace_trailer": "https://www.youtube.com/watch?v=c0i88t0Kacs",
+      "portada": "https://example.com/witcher_3.jpg"
+    },
+    {
+      "titulo": "Civilization VI",
+      "genero": "Estrategia",
+      "desarrollador": "Firaxis Games",
+      "editor": "2K Games",
+      "fecha_lanzamiento": "2016-10-21",
+      "precio": 49.99,
+      "plataformas": ["PC", "Mac", "Linux", "iOS", "Nintendo Switch", "PlayStation 4", "Xbox One"],
+      "descripcion": "Construye un imperio que resista el paso del tiempo en este juego de estrategia por turnos.",
+      "requisitos_sistema": {
+        "minimos": {
+          "sistema_operativo": "Windows 7 64-bit",
+          "procesador": "Intel Core i3 2.5 GHz / AMD Phenom II 2.6 GHz",
+          "memoria": "4 GB RAM",
+          "graficos": "1 GB GPU DirectX 11 (AMD 5570 / NVIDIA 450)",
+          "almacenamiento": "12 GB de espacio disponible"
+        },
+        "recomendados": {
+          "sistema_operativo": "Windows 10 64-bit",
+          "procesador": "4ª generación Intel Core i5 2.5 GHz / AMD FX8350 4.0 GHz",
+          "memoria": "8 GB RAM",
+          "graficos": "2 GB GPU DirectX 11 (AMD 7970 / NVIDIA 770)",
+          "almacenamiento": "12 GB de espacio disponible"
+        }
+      },
+      "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+      "clasificacion_edad": "PEGI 12",
+      "multijugador": true,
+      "cooperativo": true,
+      "enlace_trailer": "https://www.youtube.com/watch?v=5KdE0p2joJw",
+      "portada": "https://example.com/civilization_vi.jpg"
+    },
+    {
+      "titulo": "Red Dead Redemption 2",
+      "genero": "Acción/Aventura",
+      "desarrollador": "Rockstar Games",
+      "editor": "Rockstar Games",
+      "fecha_lanzamiento": "2018-10-26",
+      "precio": 59.99,
+      "plataformas": ["PC", "PlayStation 4", "Xbox One"],
+      "descripcion": "Vive la épica historia de Arthur Morgan y la banda de Van der Linde en el salvaje oeste.",
+      "requisitos_sistema": {
+        "minimos": {
+          "sistema_operativo": "Windows 7 64-bit",
+          "procesador": "Intel Core i5-2500K / AMD FX-6300",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 770 2GB / AMD Radeon R9 280 3GB",
+          "almacenamiento": "150 GB de espacio disponible"
+        },
+        "recomendados": {
+          "sistema_operativo": "Windows 10 64-bit",
+          "procesador": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+          "memoria": "12 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB",
+          "almacenamiento": "150 GB de espacio disponible"
+        }
+      },
+      "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+      "clasificacion_edad": "PEGI 18",
+      "multijugador": true,
+      "cooperativo": true,
+      "enlace_trailer": "https://www.youtube.com/watch?v=gmA6MrX81z4",
+      "portada": "https://example.com/red_dead_redemption_2.jpg"
+    },
+    {
+      "titulo": "Cyberpunk 2077",
+      "genero": "Rol (RPG)",
+      "desarrollador": "CD Projekt Red",
+      "editor": "CD Projekt",
+      "fecha_lanzamiento": "2020-12-10",
+      "precio": 49.99,
+      "plataformas": ["PC", "PlayStation 4", "Xbox One", "PlayStation 5", "Xbox Series X/S"],
+      "descripcion": "Explora Night City, una megalópolis obsesionada con el poder, el glamour y la modificación corporal.",
+      "requisitos_sistema": {
+        "minimos": {
+          "sistema_operativo": "Windows 7 64-bit",
+          "procesador": "Intel Core i5-3570K / AMD FX-8310",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 780 / AMD Radeon RX 470",
+          "almacenamiento": "70 GB de espacio disponible"
+        },
+        "recomendados": {
+          "sistema_operativo": "Windows 10 64-bit",
+          "procesador": "Intel Core i7-4790 / AMD Ryzen 3 3200G",
+          "memoria": "12 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1060 / AMD Radeon R9 Fury",
+          "almacenamiento": "70 GB de espacio disponible"
+        }
+      },
+      "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Polaco"],
+      "clasificacion_edad": "PEGI 18",
+      "multijugador": false,
+      "cooperativo": false,
+      "enlace_trailer": "https://www.youtube.com/watch?v=LembwKDo1Dk",
+      "portada": "https://example.com/cyberpunk_2077.jpg"
+    },
+    {
+        "titulo": "Elden Ring",
+        "genero": "Rol (RPG)",
+        "desarrollador": "FromSoftware",
+        "editor": "Bandai Namco Entertainment",
+        "fecha_lanzamiento": "2022-02-25",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+        "descripcion": "Un juego de rol de acción en mundo abierto desarrollado en colaboración con George R.R. Martin, creador de 'Canción de Hielo y Fuego'.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10",
+            "procesador": "Intel Core i5-8400 / AMD Ryzen 3 3300X",
+            "memoria": "12 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 3GB / AMD Radeon RX 580 4GB",
+            "almacenamiento": "60 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 11",
+            "procesador": "Intel Core i7-8700K / AMD Ryzen 5 3600X",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1070 8GB / AMD Radeon RX Vega 56 8GB",
+            "almacenamiento": "60 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Japonés"],
+        "clasificacion_edad": "PEGI 16",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=E3Huy2cdih0",
+        "portada": "https://example.com/elden_ring.jpg"
+      },
+      {
+        "titulo": "God of War",
+        "genero": "Acción/Aventura",
+        "desarrollador": "Santa Monica Studio",
+        "editor": "Sony Interactive Entertainment",
+        "fecha_lanzamiento": "2018-04-20",
+        "precio": 49.99,
+        "plataformas": ["PlayStation 4", "PC"],
+        "descripcion": "Kratos regresa en una nueva aventura épica junto a su hijo Atreus, explorando los mitos nórdicos.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-2500K / AMD Ryzen 3 1200",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 960 4GB / AMD Radeon R9 290X 4GB",
+            "almacenamiento": "70 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-4770K / AMD Ryzen 5 1600",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 570 4GB",
+            "almacenamiento": "70 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=K0u_kAWLJOA",
+        "portada": "https://example.com/god_of_war_2018.jpg"
+      },
+      {
+        "titulo": "FIFA 23",
+        "genero": "Deportes",
+        "desarrollador": "EA Vancouver",
+        "editor": "Electronic Arts",
+        "fecha_lanzamiento": "2022-09-30",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+        "descripcion": "El último juego de la saga FIFA, con mejoras en la jugabilidad, gráficos y modos de juego.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-6600K / AMD Ryzen 5 1600",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1050 Ti / AMD Radeon RX 570",
+            "almacenamiento": "100 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-6700 / AMD Ryzen 7 2700X",
+            "memoria": "12 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1660 / AMD Radeon RX 5600 XT",
+            "almacenamiento": "100 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 3",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=o3V-GvvzjE4",
+        "portada": "https://example.com/fifa_23.jpg"
+      },
+      {
+        "titulo": "The Sims 4",
+        "genero": "Simulación",
+        "desarrollador": "Maxis",
+        "editor": "Electronic Arts",
+        "fecha_lanzamiento": "2014-09-02",
+        "precio": 39.99,
+        "plataformas": ["PC", "Mac", "PlayStation 4", "Xbox One"],
+        "descripcion": "Crea y controla a tus Sims en un mundo lleno de posibilidades, desde sus hogares hasta sus carreras y relaciones.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7 64-bit",
+            "procesador": "Intel Core 2 Duo E4300 / AMD Athlon 64 X2 4000+",
+            "memoria": "4 GB RAM",
+            "graficos": "NVIDIA GeForce 6600 / ATI Radeon X1300",
+            "almacenamiento": "18 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5 / AMD Athlon X4",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 650 / AMD Radeon HD 7750",
+            "almacenamiento": "18 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 12",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=GJENRAB2x2Y",
+        "portada": "https://example.com/the_sims_4.jpg"
+      },
+      {
+        "titulo": "Call of Duty: Modern Warfare II",
+        "genero": "FPS",
+        "desarrollador": "Infinity Ward",
+        "editor": "Activision",
+        "fecha_lanzamiento": "2022-10-28",
+        "precio": 69.99,
+        "plataformas": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+        "descripcion": "La secuela del aclamado Modern Warfare (2019), con una campaña intensa y un multijugador revolucionario.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i3-6100 / AMD Ryzen 3 1200",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 960 / AMD Radeon RX 470",
+            "almacenamiento": "125 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-6600K / AMD Ryzen 5 1400",
+            "memoria": "12 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+            "almacenamiento": "125 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=oZ6iiRrz1SY",
+        "portada": "https://example.com/cod_mw2.jpg"
+      },
+      {
+        "titulo": "Minecraft",
+        "genero": "Sandbox",
+        "desarrollador": "Mojang Studios",
+        "editor": "Mojang Studios",
+        "fecha_lanzamiento": "2011-11-18",
+        "precio": 26.95,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch", "Mobile"],
+        "descripcion": "Un juego de mundo abierto donde puedes construir, explorar y sobrevivir en un mundo generado proceduralmente.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7",
+            "procesador": "Intel Core i3-3210 / AMD A8-7600 APU",
+            "memoria": "4 GB RAM",
+            "graficos": "Intel HD Graphics 4000 / AMD Radeon R5 series",
+            "almacenamiento": "1 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10",
+            "procesador": "Intel Core i5-4690 / AMD A10-7800",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce 700 Series / AMD Radeon Rx 200 Series",
+            "almacenamiento": "4 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 7",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=MmB9b5njVbA",
+        "portada": "https://example.com/minecraft.jpg"
+      },
+      {
+        "titulo": "Fortnite",
+        "genero": "Battle Royale",
+        "desarrollador": "Epic Games",
+        "editor": "Epic Games",
+        "fecha_lanzamiento": "2017-07-25",
+        "precio": 0.00,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch", "Mobile"],
+        "descripcion": "Un juego de Battle Royale donde 100 jugadores compiten para ser el último en pie, con construcción y combates intensos.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7/8/10 64-bit",
+            "procesador": "Intel Core i3-3225 / AMD FX-4100",
+            "memoria": "4 GB RAM",
+            "graficos": "Intel HD 4000",
+            "almacenamiento": "20 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-7300U / AMD Ryzen 3 1200",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GTX 960 / AMD R9 280",
+            "almacenamiento": "20 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 12",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=2gUtfBmw86Y",
+        "portada": "https://example.com/fortnite.jpg"
+      },
+      {
+        "titulo": "Assassin's Creed Valhalla",
+        "genero": "Acción/Aventura",
+        "desarrollador": "Ubisoft Montreal",
+        "editor": "Ubisoft",
+        "fecha_lanzamiento": "2020-11-10",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+        "descripcion": "Encarna a Eivor, un fiero vikingo, en su búsqueda por construir un nuevo hogar en la Inglaterra del siglo IX.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-4460 / AMD Ryzen 3 1200",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 960 / AMD Radeon R9 380",
+            "almacenamiento": "50 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-4790 / AMD Ryzen 5 1600",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 570",
+            "almacenamiento": "50 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=ssrNcwxALS4",
+        "portada": "https://example.com/ac_valhalla.jpg"
+      },
+      {
+        "titulo": "Halo Infinite",
+        "genero": "FPS",
+        "desarrollador": "343 Industries",
+        "editor": "Xbox Game Studios",
+        "fecha_lanzamiento": "2021-12-08",
+        "precio": 59.99,
+        "plataformas": ["PC", "Xbox One", "Xbox Series X/S"],
+        "descripcion": "El Jefe Maestro regresa en una nueva aventura épica para salvar la galaxia de una amenaza sin precedentes.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-4440 / AMD Ryzen 5 1600",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1050 Ti / AMD Radeon RX 570",
+            "almacenamiento": "50 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-9700K / AMD Ryzen 7 3700X",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce RTX 2070 / AMD Radeon RX 5700 XT",
+            "almacenamiento": "50 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 16",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v/PyMlV5_HRWk",
+        "portada": "https://example.com/halo_infinite.jpg"
+      },
+      {
+        "titulo": "Animal Crossing: New Horizons",
+        "genero": "Simulación",
+        "desarrollador": "Nintendo",
+        "editor": "Nintendo",
+        "fecha_lanzamiento": "2020-03-20",
+        "precio": 59.99,
+        "plataformas": ["Nintendo Switch"],
+        "descripcion": "Crea tu propia isla paradisíaca y vive una vida relajada llena de actividades y personajes encantadores.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "N/A",
+            "procesador": "N/A",
+            "memoria": "N/A",
+            "graficos": "N/A",
+            "almacenamiento": "6.2 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "N/A",
+            "procesador": "N/A",
+            "memoria": "N/A",
+            "graficos": "N/A",
+            "almacenamiento": "6.2 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Japonés"],
+        "clasificacion_edad": "PEGI 3",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=_3YNL0OWio0",
+        "portada": "https://example.com/animal_crossing_nh.jpg"
+      },
+      {
+        "titulo": "Dark Souls III",
+        "genero": "Rol (RPG)",
+        "desarrollador": "FromSoftware",
+        "editor": "Bandai Namco Entertainment",
+        "fecha_lanzamiento": "2016-04-12",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One"],
+        "descripcion": "Un oscuro y desafiante juego de rol de acción que cierra la trilogía de Dark Souls.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7 64-bit",
+            "procesador": "Intel Core i3-2100 / AMD FX-6300",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 750 Ti / AMD Radeon HD 7950",
+            "almacenamiento": "25 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-3770 / AMD FX-8350",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 970 / AMD Radeon R9 290",
+            "almacenamiento": "25 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 16",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=cWBwFhUv1-8",
+        "portada": "https://example.com/dark_souls_3.jpg"
+      },
+      {
+        "titulo": "Overwatch 2",
+        "genero": "FPS",
+        "desarrollador": "Blizzard Entertainment",
+        "editor": "Blizzard Entertainment",
+        "fecha_lanzamiento": "2022-10-04",
+        "precio": 0.00,
+        "plataformas": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "descripcion": "Un shooter en primera persona por equipos con héroes únicos y modos de juego competitivos y cooperativos.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i3 / AMD Phenom X3 8650",
+            "memoria": "6 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 600 series / AMD Radeon HD 7000 series",
+            "almacenamiento": "50 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7 / AMD Ryzen 5",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 / AMD Radeon R9 380",
+            "almacenamiento": "50 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 12",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=GKXS_YA9s7E",
+        "portada": "https://example.com/overwatch_2.jpg"
+      },
+      {
+        "titulo": "Stardew Valley",
+        "genero": "Simulación",
+        "desarrollador": "ConcernedApe",
+        "editor": "ConcernedApe",
+        "fecha_lanzamiento": "2016-02-26",
+        "precio": 14.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch", "Mobile"],
+        "descripcion": "Un juego de simulación agrícola donde puedes cultivar, criar animales, pescar y construir relaciones con los aldeanos.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7",
+            "procesador": "Intel Core 2 Duo 2.0 GHz",
+            "memoria": "2 GB RAM",
+            "graficos": "256 MB de VRAM",
+            "almacenamiento": "500 MB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10",
+            "procesador": "Intel Core i3",
+            "memoria": "4 GB RAM",
+            "graficos": "512 MB de VRAM",
+            "almacenamiento": "500 MB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 7",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=ot7uXNQskhs",
+        "portada": "https://example.com/stardew_valley.jpg"
+      },
+      {
+        "titulo": "Doom Eternal",
+        "genero": "FPS",
+        "desarrollador": "id Software",
+        "editor": "Bethesda Softworks",
+        "fecha_lanzamiento": "2020-03-20",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+        "descripcion": "Un shooter en primera persona frenético donde debes luchar contra hordas de demonios en el infierno y la Tierra.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-3570 / AMD Ryzen 3 1300X",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 970 / AMD Radeon RX 470",
+            "almacenamiento": "50 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-6700K / AMD Ryzen 5 1600X",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1080 / AMD Radeon RX Vega 56",
+            "almacenamiento": "50 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": true,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=FkklG9MA0vM",
+        "portada": "https://example.com/doom_eternal.jpg"
+      },
+      {
+        "titulo": "Star Wars Jedi: Fallen Order",
+        "genero": "Acción/Aventura",
+        "desarrollador": "Respawn Entertainment",
+        "editor": "Electronic Arts",
+        "fecha_lanzamiento": "2019-11-15",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One"],
+        "descripcion": "Una aventura de Star Wars donde encarnas a un joven Jedi en su lucha por sobrevivir y reconstruir la Orden Jedi.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i3-3220 / AMD FX-6100",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 650 / AMD Radeon HD 7750",
+            "almacenamiento": "55 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-6700K / AMD Ryzen 7 1700",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56",
+            "almacenamiento": "55 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 16",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=0GLbwkfhYZk",
+        "portada": "https://example.com/jedi_fallen_order.jpg"
+      },
+      {
+        "titulo": "Grand Theft Auto V",
+        "genero": "Acción/Aventura",
+        "desarrollador": "Rockstar North",
+        "editor": "Rockstar Games",
+        "fecha_lanzamiento": "2013-09-17",
+        "precio": 29.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "PlayStation 3", "Xbox 360"],
+        "descripcion": "Vive la vida de tres criminales en la ciudad de Los Santos, donde el crimen, la corrupción y la ambición son el pan de cada día.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core 2 Quad CPU Q6600 / AMD Phenom 9850 Quad-Core",
+            "memoria": "4 GB RAM",
+            "graficos": "NVIDIA GeForce 9800 GT 1GB / AMD Radeon HD 4870 1GB",
+            "almacenamiento": "72 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-3470 / AMD X8 FX-8350",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 660 2GB / AMD Radeon HD 7870 2GB",
+            "almacenamiento": "72 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=QkkoHAzjnUs",
+        "portada": "https://example.com/gta_v.jpg"
+      },
+      {
+        "titulo": "The Last of Us Part II",
+        "genero": "Acción/Aventura",
+        "desarrollador": "Naughty Dog",
+        "editor": "Sony Interactive Entertainment",
+        "fecha_lanzamiento": "2020-06-19",
+        "precio": 59.99,
+        "plataformas": ["PlayStation 4"],
+        "descripcion": "Una emocionante y oscura historia de venganza y supervivencia en un mundo post-apocalíptico.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "N/A",
+            "procesador": "N/A",
+            "memoria": "N/A",
+            "graficos": "N/A",
+            "almacenamiento": "100 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "N/A",
+            "procesador": "N/A",
+            "memoria": "N/A",
+            "graficos": "N/A",
+            "almacenamiento": "100 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=btmN-bWwv0A",
+        "portada": "https://example.com/the_last_of_us_2.jpg"
+      },
+      {
+        "titulo": "Among Us",
+        "genero": "Multijugador",
+        "desarrollador": "InnerSloth",
+        "editor": "InnerSloth",
+        "fecha_lanzamiento": "2018-06-15",
+        "precio": 4.99,
+        "plataformas": ["PC", "Mobile", "Nintendo Switch", "PlayStation 4", "Xbox One"],
+        "descripcion": "Un juego de deducción social donde los tripulantes deben completar tareas mientras los impostores intentan sabotearlos.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7",
+            "procesador": "Intel Pentium 4",
+            "memoria": "1 GB RAM",
+            "graficos": "Intel HD Graphics 4000",
+            "almacenamiento": "250 MB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10",
+            "procesador": "Intel Core i3",
+            "memoria": "2 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 660",
+            "almacenamiento": "250 MB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 7",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=NSJ4cESNQfE",
+        "portada": "https://example.com/among_us.jpg"
+      },
+      {
+        "titulo": "Horizon Zero Dawn",
+        "genero": "Acción/Aventura",
+        "desarrollador": "Guerrilla Games",
+        "editor": "Sony Interactive Entertainment",
+        "fecha_lanzamiento": "2017-02-28",
+        "precio": 49.99,
+        "plataformas": ["PC", "PlayStation 4"],
+        "descripcion": "Explora un mundo post-apocalíptico dominado por máquinas y descubre los secretos de una civilización perdida.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-2500K / AMD FX-6300",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 780 / AMD Radeon R9 290",
+            "almacenamiento": "100 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+            "almacenamiento": "100 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 16",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=u4-FCsiF5x4",
+        "portada": "https://example.com/horizon_zero_dawn.jpg"
+      },
+      {
+        "titulo": "League of Legends",
+        "genero": "MOBA",
+        "desarrollador": "Riot Games",
+        "editor": "Riot Games",
+        "fecha_lanzamiento": "2009-10-27",
+        "precio": 0.00,
+        "plataformas": ["PC"],
+        "descripcion": "Un juego de estrategia en tiempo real donde dos equipos de campeones compiten para destruir la base del enemigo.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7",
+            "procesador": "Intel Core i3-530 / AMD A6-3650",
+            "memoria": "2 GB RAM",
+            "graficos": "NVIDIA GeForce 9600GT / AMD Radeon HD 6570",
+            "almacenamiento": "16 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10",
+            "procesador": "Intel Core i5-3300 / AMD Ryzen 3 1200",
+            "memoria": "4 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 560 / AMD Radeon HD 6950",
+            "almacenamiento": "16 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 12",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=BGtROJeMPeE",
+        "portada": "https://example.com/league_of_legends.jpg"
+      },
+      {
+        "titulo": "Cyberpunk 2077",
+        "genero": "Rol (RPG)",
+        "desarrollador": "CD Projekt Red",
+        "editor": "CD Projekt",
+        "fecha_lanzamiento": "2020-12-10",
+        "precio": 49.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "PlayStation 5", "Xbox Series X/S"],
+        "descripcion": "Explora Night City, una megalópolis obsesionada con el poder, el glamour y la modificación corporal.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7 64-bit",
+            "procesador": "Intel Core i5-3570K / AMD FX-8310",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 780 / AMD Radeon RX 470",
+            "almacenamiento": "70 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-4790 / AMD Ryzen 3 3200G",
+            "memoria": "12 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1060 / AMD Radeon R9 Fury",
+            "almacenamiento": "70 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Polaco"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=LembwKDo1Dk",
+        "portada": "https://example.com/cyberpunk_2077.jpg"
+      },
+      {
+        "titulo": "Super Mario Odyssey",
+        "genero": "Plataformas",
+        "desarrollador": "Nintendo",
+        "editor": "Nintendo",
+        "fecha_lanzamiento": "2017-10-27",
+        "precio": 59.99,
+        "plataformas": ["Nintendo Switch"],
+        "descripcion": "Únete a Mario y su nuevo aliado Cappy en una aventura épica a través de diversos reinos para rescatar a la Princesa Peach.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "N/A",
+            "procesador": "N/A",
+            "memoria": "N/A",
+            "graficos": "N/A",
+            "almacenamiento": "5.7 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "N/A",
+            "procesador": "N/A",
+            "memoria": "N/A",
+            "graficos": "N/A",
+            "almacenamiento": "5.7 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Japonés"],
+        "clasificacion_edad": "PEGI 7",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=5kcdRBHM7kM",
+        "portada": "https://example.com/super_mario_odyssey.jpg"
+      },
+      {
+        "titulo": "Resident Evil Village",
+        "genero": "Survival Horror",
+        "desarrollador": "Capcom",
+        "editor": "Capcom",
+        "fecha_lanzamiento": "2021-05-07",
+        "precio": 59.99,
+        "plataformas": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X/S"],
+        "descripcion": "Vive una experiencia de terror en primera persona mientras exploras un misterioso pueblo lleno de horrores.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-7500 / AMD Ryzen 3 1200",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1050 Ti / AMD Radeon RX 560",
+            "almacenamiento": "27 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i7-8700 / AMD Ryzen 5 3600",
+            "memoria": "16 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 1070 / AMD Radeon RX 5700",
+            "almacenamiento": "27 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": false,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=9jDm0oCyN4c",
+        "portada": "https://example.com/resident_evil_village.jpg"
+      },
+      {
+        "titulo": "Mortal Kombat 11",
+        "genero": "Lucha",
+        "desarrollador": "NetherRealm Studios",
+        "editor": "Warner Bros. Interactive Entertainment",
+        "fecha_lanzamiento": "2019-04-23",
+        "precio": 49.99,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+        "descripcion": "El último juego de la saga Mortal Kombat, con gráficos impresionantes y un sistema de combate renovado.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7 64-bit",
+            "procesador": "Intel Core i5-750 / AMD Phenom II X4 965",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 670 / AMD Radeon HD 7950",
+            "almacenamiento": "60 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-2300 / AMD FX-6300",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 780 / AMD Radeon R9 290",
+            "almacenamiento": "60 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 18",
+        "multijugador": true,
+        "cooperativo": false,
+        "enlace_trailer": "https://www.youtube.com/watch?v=UoTams2ycKk",
+        "portada": "https://example.com/mortal_kombat_11.jpg"
+      },
+      {
+        "titulo": "Apex Legends",
+        "genero": "Battle Royale",
+        "desarrollador": "Respawn Entertainment",
+        "editor": "Electronic Arts",
+        "fecha_lanzamiento": "2019-02-04",
+        "precio": 0.00,
+        "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+        "descripcion": "Un Battle Royale en primera persona con héroes únicos y habilidades especiales.",
+        "requisitos_sistema": {
+          "minimos": {
+            "sistema_operativo": "Windows 7 64-bit",
+            "procesador": "Intel Core i3-6300 / AMD FX-4350",
+            "memoria": "6 GB RAM",
+            "graficos": "NVIDIA GeForce GT 640 / AMD Radeon HD 7700",
+            "almacenamiento": "56 GB de espacio disponible"
+          },
+          "recomendados": {
+            "sistema_operativo": "Windows 10 64-bit",
+            "procesador": "Intel Core i5-3570K / AMD Ryzen 5 1600",
+            "memoria": "8 GB RAM",
+            "graficos": "NVIDIA GeForce GTX 970 / AMD Radeon R9 290",
+            "almacenamiento": "56 GB de espacio disponible"
+          }
+        },
+        "idiomas_disponibles": ["Español", "Inglés", "Francés", "Alemán", "Italiano"],
+        "clasificacion_edad": "PEGI 16",
+        "multijugador": true,
+        "cooperativo": true,
+        "enlace_trailer": "https://www.youtube.com/watch?v=oQtHENM_GZU",
+        "portada": "https://example.com/apex_legends.jpg"
+      }
+  ]
