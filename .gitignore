@@ -1,2 +1,2 @@
 # Ignorar la carpeta archivos-postgres y todo su contenido
-postgres-data
+postgres_data
