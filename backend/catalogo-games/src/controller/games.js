@@ -35,7 +35,7 @@ const update_game = async (req,res) => {
     try {
 
         const updateGame = await GamesModel.update(id_game,response.data)
-        return res.status(201).json({data: updateGame, message: "Juego actualizado exitosamente"});
+        return res.status(200).json({data: updateGame, message: "Juego actualizado exitosamente"});
 
     } catch (error) {
         
@@ -52,7 +52,7 @@ const delete_game = async (req,res) => {
     try {
 
         const deleteGame = await GamesModel.delete(id_game)
-        return res.status(201).json({data: deleteGame, message: "Juego eliminado exitosamente"});
+        return res.status(200).json({data: deleteGame, message: "Juego eliminado exitosamente"});
 
     } catch (error) {
         
@@ -69,7 +69,7 @@ const delete_gameName = async (req,res) => {
     try {
 
         const deleteGame = await GamesModel.deleteName(nameGame)
-        return res.status(201).json({data: deleteGame, message: "Juego eliminado exitosamente"});
+        return res.status(200).json({data: deleteGame, message: "Juego eliminado exitosamente"});
 
     } catch (error) {
         
@@ -86,7 +86,7 @@ const obtener_game = async (req,res) => {
     try {
 
         const getAllGame = await GamesModel.getAll()
-        return res.status(201).json({data : getAllGame, message : "Juegos obtenidos exitosamente"});
+        return res.status(200).json({data : getAllGame, message : "Juegos obtenidos exitosamente"});
 
     } catch (error) {
         

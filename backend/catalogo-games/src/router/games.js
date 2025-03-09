@@ -52,13 +52,13 @@ const routes = () => {
     routes.put('/update-game', update_game)
 
     // api para obtener juegos
-    routes.get('get-games', obtener_game)
+    routes.get('/get-games', obtener_game)
 
     // api para obtener juegos por id
-    routes.get('get-games/:id_game', obtener_gameID)
+    routes.get('/get-games/:id_game', obtener_gameID)
 
     // api para obtener juegos por nombre
-    routes.get('get-games/:nameGame', obtener_gameName)
+    routes.get('/get-games/:nameGame', obtener_gameName)
 
     return routes;
 }
