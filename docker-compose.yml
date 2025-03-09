@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: e-commerce-carro-compras
+    environment:
+      - POSTGRES_DB=carro_compras
+      - POSTGRES_USER=jesus
+      - POSTGRES_PASSWORD=root
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=ROOT
+    ports:
+      - 5050:80
