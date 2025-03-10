@@ -19,7 +19,9 @@ body {
     --color-white: #eaeaea;
     --main-tipography: 'Inter';
     font-family: var(--main-tipography);
-
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     color: var(--color-light-purple);
     min-height: 100dvh;
     background-color: var(--color-dark);
@@ -39,6 +41,8 @@ body {
     gap: 2rem;
     font-weight: bold;
     align-content: stretch;
+    width: 100%;
+
 }
 
 
@@ -55,7 +59,7 @@ body {
 }
 
 .header__user-img{
-    max-width: 50px;
+    max-width: 70px;
     width: 100%;
     border-radius: 50%;
     padding: .75rem 0;
@@ -108,6 +112,8 @@ body {
     align-items: center;
     position: relative;
 }
+
+
 
 .header__dropdown{
     position: absolute;
