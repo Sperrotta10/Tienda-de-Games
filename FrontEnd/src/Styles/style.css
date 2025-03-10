@@ -21,7 +21,6 @@ body {
     font-family: var(--main-tipography);
     width: 90%;
     margin-left: auto;
-    margin-right: auto;
     color: var(--color-light-purple);
     min-height: 100dvh;
     background-color: var(--color-dark);
