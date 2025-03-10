@@ -10,7 +10,8 @@
 .header__list{
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
+    width: 90%;
     font-weight: bold;
     align-content: stretch;
 }
@@ -111,4 +112,9 @@
 
 .header__dropdown-item:hover{
     background-color: var(--color-light-purple);
+}
+
+.no_underline{
+    text-decoration: none;
+    color: var(--color-light-purple);
 }
