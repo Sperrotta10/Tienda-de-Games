@@ -1,5 +1,6 @@
 import styles from "../Styles/header/style.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -80,10 +81,21 @@ export default function Header() {
               />
             </li>
             <li className={styles["header__nav-item"]}>
-              <span className={styles["header__nav-link"]}>Biblioteca</span>
+              <Link
+                href="/biblioteca"
+                className={styles.no_underline}
+              >
+                <span className={styles["header__nav-link"]}>Biblioteca</span>
+              </Link>
             </li>
+            
             <li className={styles["header__nav-item"]}>
-              <span className={styles["header__nav-link"]}>Reseñas</span>
+            <Link
+                href="/tienda"
+                className={styles.no_underline}
+              >
+              <span className={styles["header__nav-link"]}>Tienda</span>
+            </Link>
             </li>
           </ul>
         </li>
