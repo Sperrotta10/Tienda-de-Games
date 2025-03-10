@@ -16,7 +16,7 @@
     align-self: center;
     justify-content: center;
     align-content: center;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    padding: 5px;
+    padding: 6px;
   }
   
   .gameName {
@@ -91,6 +91,11 @@
   .gamecard_footer{
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     width: 100%;
     justify-content: space-between;
   }
+
+  .whiteIcon {
+    filter: invert(1); /* Convierte el SVG a blanco */
+}
