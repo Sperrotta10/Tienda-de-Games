@@ -1,4 +1,4 @@
-import GameCard from "../Components/GameCard.js";
+import GameCard from "../Components/biblioteca/GameCard.js";
 import Main from "../Components/main/main.js";
 export default function Home() {
   return (

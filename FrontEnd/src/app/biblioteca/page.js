@@ -1,6 +1,6 @@
 import estilos from "../../Styles/library.module.css";
-import GameCard from "../../Components/GameCard.js";
-import DropBox from "../../Components/Dropbox.js";
+import GameCard from "../../Components/biblioteca/GameCard.js";
+import DropBox from "../../Components/biblioteca/Dropbox.js";
 
 export default function library() {
 
@@ -51,14 +51,7 @@ export default function library() {
                     gameName="Fifa 25"
                     backgroundImage="fifa25.avif"
                 />
-                 <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                 <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
+                
             </div>
             
             <div className={estilos.dropbox_container}>
