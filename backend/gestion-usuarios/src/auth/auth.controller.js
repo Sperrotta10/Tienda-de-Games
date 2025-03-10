@@ -21,25 +21,25 @@ export class AuthController {
                 return res.status(403).json({ message: 'RefreshToken inválido' });
             }
 
-            jwt.verify(refreshToken, ACCESS_SECRET_KEY, (err, user) => {
-                if (err) {
-                    return res.status(403).json({ message: 'RefreshToken inválido' });
-                }
+            if(refreshTokenDB.expiresAt < new Date()){
+                return res.status(403).json({ message: 'RefreshToken expirado' });
+            }
 
-                const accessToken = jwt.sign(
-                    {
-                        userId: user.userId,
-                    },
-                    ACCESS_SECRET_KEY,
-                    {
-                        expiresIn: "12h"
-                    }
-                );
-                return res.json({ accessToken });
-            });
+            const accessToken = jwt.sign(
+                {
+                    userId: refreshTokenDB.userId,
+                },
+                ACCESS_SECRET_KEY,
+                {
+                    expiresIn: "12h"
+                }
+            );
+
+            res.json({ accessToken });
+
         } catch (error) {
             console.error('Error al refrescar el token:', error);
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            res.status(500).json({ message: 'Error interno del servidor' });
         }
     };
 
