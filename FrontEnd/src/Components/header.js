@@ -91,7 +91,7 @@ export default function Header() {
             
             <li className={styles["header__nav-item"]}>
             <Link
-                href="/tienda"
+                href="/"
                 className={styles.no_underline}
               >
               <span className={styles["header__nav-link"]}>Tienda</span>
