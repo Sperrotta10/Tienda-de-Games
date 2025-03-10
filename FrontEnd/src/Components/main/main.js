@@ -1,11 +1,13 @@
-import Carousel from "./carousel";
+
 import Offers from "./offerts";
 import Games from "./games";
 import Announcements from "./announcements";
+
+import GoodCarousel from "./goodCarousel";
 export default function Main() {
   return (
     <>
-      <Carousel></Carousel>
+      <GoodCarousel></GoodCarousel>
       <Offers></Offers>
       <Games></Games>
       <Announcements></Announcements>

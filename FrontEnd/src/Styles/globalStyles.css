@@ -30,3 +30,24 @@ body {
     width: 100%;
     margin: 3rem auto;
 }
+
+/* Cambiar el color de los dots */
+:global(.slick-dots li button) {
+    background-color: red !important; /* Cambia 'red' por el color que desees */
+  }
+  
+
+
+  .slick-dots li.slick-active button:before {
+    color: #892CDC !important; /* O el color que prefieras para el dot activo */
+  }
+
+  .slick-dots li button:before{
+    color: #892CDCcc !important;
+  }
+  
+  /* Cambiar el color de los botones de navegación (flechas) */
+  :global(.slick-prev:before),
+  :global(.slick-next:before) {
+    color: blue; /* Cambia 'blue' por el color deseado */
+  }
