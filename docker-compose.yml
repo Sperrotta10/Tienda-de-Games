@@ -15,15 +15,23 @@ services:
       - mongodb
     environment:
       - MONGO_URI=${MONGO_URI_GAMES}
-      
-  nginx:
-    image: nginx:latest
+
+  mongodb3:
+    image: mongo:4.4
+    container_name: mongodb3
     ports:
-      - "81:81"
+      - "27019:27017"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - mongodb_data3:/data/db
+
+  gestion-pedidos:
+    build: ./backend/gestion-pedidos
+    ports:
+      - "2003:2003"
     depends_on:
-      - gestion-usuarios
+      - mongodb3
+    environment:
+      - MONGO_URI=${MONGO_URI_PEDIDOS}
 
   mysql:
     image: mysql:8.0
@@ -59,7 +67,19 @@ services:
       REFRESH_SECRET_KEY: ${USERS_REFRESH_SECRET_KEY}
     depends_on:
       - mysql 
+      
+  nginx:
+    image: nginx:latest
+    ports:
+      - "81:81"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - gestion-usuarios
+      - catalogo-games
+      - gestion-pedidos
 
 volumes:
   mongodb_data:
   mysql_data:
+  mongodb_data3:
