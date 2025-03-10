@@ -17,6 +17,13 @@ const GameCard = ({ gameName, backgroundImage }) => {
                 <div className={styles.gradient}>
                     <div  className={styles.gamecard_footer}>
                         <h3 className={styles.gameName}>{gameName}</h3>
+                        <Image
+                            src="/assets/icons/download.svg"
+                            alt="Play"
+                            width={18}
+                            height={18}
+                            className={styles.whiteIcon}
+                        ></Image>
                     </div>
                 </div>
             </div>
