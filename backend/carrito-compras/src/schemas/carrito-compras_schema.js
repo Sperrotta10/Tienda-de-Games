@@ -1,21 +1,15 @@
 const Joi = require('joi');
 
-const id = Joi.number().integer();
-const userId = Joi.number().integer();
-const juegoId = Joi.number().integer().min(1); // Asegura que sea un ID válido
-const amount = Joi.number().integer().min(1);
+const usuarioId = Joi.string().required();
+const total = Joi.number().min(0).required();
 
 const getCarritoSchema = Joi.object({
-  id: id.required(),
+  usuarioId, // Se obtiene el carrito con el ID del usuario
 });
 
 const createCarritoSchema = Joi.object({
-  userId: userId.required(),
+  usuarioId, // Se crea un carrito con el usuario asociado
+  total, // Se inicializa con total = 0
 });
 
-const addItemSchema = Joi.object({
-  juegoId: juegoId.required(),
-  amount: amount.required(),
-});
-
-module.exports = { getCarritoSchema, createCarritoSchema, addItemSchema };
+module.exports = { getCarritoSchema, createCarritoSchema };
