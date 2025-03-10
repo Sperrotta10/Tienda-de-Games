@@ -5,5 +5,8 @@ export const {
     DB_NAME,
     DB_HOST,
     DB_PORT,
+    ACCESS_TOKEN_SECRET,
+    REFRESH_TOKEN_SECRET,
+    SALT_ROUNDS,
 } = process.env
 
