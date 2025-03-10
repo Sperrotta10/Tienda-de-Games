@@ -1,0 +1,112 @@
+.main-announcements__container{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6rem;
+    margin-bottom: 3rem;
+}
+
+.main-announcements__item{
+    display: flex;
+    border: solid 1px var(--color-medium-purple);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-announcements__image-wrapper, .main-announcements__content{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+
+.main-announcements__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-announcements__content{
+    color: var(--color-white);
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+
+}
+
+.main-announcements__title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.main-announcements__description{
+    color: var(--color-light-gray);
+}
+
+.main-announcements__button{
+    background-color: var(--color-medium-purple);
+    color: var(--color-white);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--main-tipography);
+    font-weight: bold;
+}
+
+.announcements__content--right{
+    background-color: var(--color-medium-purple);
+}
+
+.announcements__button--right{
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+.main-announcements__explore{
+    display: flex;
+    background-color: var(--color-medium-purple-transparent);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.main-announcements__image--explore{
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.main-announcements__button--explore{
+    align-self: center;
+    background-color: transparent;
+    color: var(--color-white);
+    border: solid 1px var(--color-white);
+}
+
+.main-announcements__secondary{
+    display: flex;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.main-announcements__image--secondary{
+    max-height: 350px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px var(--color-medium-purple)) drop-shadow(0 0 10px var(--color-medium-purple));
+}
+
+.main-announcements__button--secondary {
+    align-self: center;
+    width: 7.5rem;
+}
+
+.main-announcements__image-wrapper--explore, .main-announcements__image-wrapper--secondary{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.main-announcements__content--explore, .main-announcements__content--secondary{
+    flex-basis: 0;
+    flex-grow: 1.5;
+}
