@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    --color-dark: #121212;
+    --color-dark-purple: #52057B;
+    --color-medium-purple: #892CDC;
+    --color-medium-purple-transparent: #52057Bbb;
+    --color-light-purple: #BC6FF1;
+    --color-gray: #6F6F6F;
+    --color-light-gray: #C4C4C4;
+    --color-white: #eaeaea;
+    --main-tipography: 'Inter';
+    font-family: var(--main-tipography);
+
+    color: var(--color-light-purple);
+    min-height: 100dvh;
+    background-color: var(--color-dark);
+}
+
+.main{
+    max-width: clamp(1000px, 90vw, 1280px);
+    width: 100%;
+    margin: 3rem auto;
+}
+
+/* Cambiar el color de los dots */
+:global(.slick-dots li button) {
+    background-color: red !important; /* Cambia 'red' por el color que desees */
+  }
+  
+
+
+  .slick-dots li.slick-active button:before {
+    color: #892CDC !important; /* O el color que prefieras para el dot activo */
+  }
+
+  .slick-dots li button:before{
+    color: #892CDCcc !important;
+  }
+  
+  /* Cambiar el color de los botones de navegación (flechas) */
+  :global(.slick-prev:before),
+  :global(.slick-next:before) {
+    color: blue; /* Cambia 'blue' por el color deseado */
+  }

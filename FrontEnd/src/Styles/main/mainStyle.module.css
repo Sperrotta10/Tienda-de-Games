@@ -1,0 +1,5 @@
+.main{
+    max-width: clamp(1000px, 90vw, 1280px);
+    width: 100%;
+    margin: 3rem auto;
+}

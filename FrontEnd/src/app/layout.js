@@ -1,5 +1,9 @@
 import header from "../Components/header";
 import "../Styles/style.css"
+import Script from 'next/script'
+import {inter} from "../fonts/fonts";
+import '../Styles/globalStyles.css'
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
@@ -17,10 +21,11 @@ export default function RootLayout({ children }) {
           href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
       </head>
-      <body>
-        <header>{header()}</header>
-
-        <main>{children}</main>
+      <body className={`${inter.className} antialiased`}>
+        {header()}
+        <main className="main">{children}</main>
+        
+        {/* <Script src="../Scripts/script.js" strategy="afterInteractive"/> */}
       </body>
     </html>
   );

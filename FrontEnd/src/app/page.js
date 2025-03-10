@@ -1,11 +1,16 @@
-
+import GameCard from "../Components/GameCard.js";
+import Main from "../Components/main/main.js";
 export default function Home() {
   return (
-    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-      <h1>
-        Home Page...
-      </h1>
-      
-    </div>
+    <Main />
+
+    
   );
 }
+{/* <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+      <GameCard
+        gameName="Fifa 25"
+        backgroundImage="fifa25.avif"
+      />
+      
+    </div> */}
