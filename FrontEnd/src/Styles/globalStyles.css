@@ -19,16 +19,16 @@ body {
     --color-white: #eaeaea;
     --main-tipography: 'Inter';
     font-family: var(--main-tipography);
-
     color: var(--color-light-purple);
     min-height: 100dvh;
     background-color: var(--color-dark);
+    width: 90%;
 }
 
 .main{
     max-width: clamp(1000px, 90vw, 1280px);
-    width: 100%;
-    margin: 3rem auto;
+    margin: 0;
+    width: 90%;
 }
 
 /* Cambiar el color de los dots */
