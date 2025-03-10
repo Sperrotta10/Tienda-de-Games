@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "../Styles/style.css";
 import Image from "next/image";
 
@@ -77,10 +78,22 @@ export default function header() {
                   />
                 </li>
                 <li className="header__nav-item">
-                  <span className="header__nav-link">Biblioteca</span>
+                  <Link
+                    href="/biblioteca"
+                    replace={false}
+                    style={{ textDecoration: "none",color: "#BC6FF1" }}
+                  >
+                    <span className="header__nav-link">Biblioteca</span>
+                  </Link>
                 </li>
                 <li className="header__nav-item">
-                  <span className="header__nav-link">Reseñas</span>
+                <Link
+                    href="/tienda"
+                    replace={false}
+                    style={{ textDecoration: "none",color: "#BC6FF1" }}
+                  >
+                    <span className="header__nav-link">Tienda</span>
+                  </Link>
                 </li>
               </ul>
             </li>
