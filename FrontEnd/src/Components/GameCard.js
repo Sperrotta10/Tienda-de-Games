@@ -15,7 +15,9 @@ const GameCard = ({ gameName, backgroundImage }) => {
                 priority={false} // Lazy loading habilitado por defecto
             />
                 <div className={styles.gradient}>
-                    <h3 className={styles.gameName}>{gameName}</h3>
+                    <div  className={styles.gamecard_footer}>
+                        <h3 className={styles.gameName}>{gameName}</h3>
+                    </div>
                 </div>
             </div>
         </div>

@@ -12,12 +12,12 @@ export default function library() {
             <h1 className={estilos.title}>Biblioteca</h1>
             <div className={estilos.games_container}>
                 <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
+                    gameName="Monster Hunter Wilds"
+                    backgroundImage="mh_wilds.webp"
                 />
                 <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
+                    gameName="Mortal Kombat 1"
+                    backgroundImage="Mortal_Kombat_1.webp"
                 />
                 <GameCard
                     gameName="Fifa 25"
