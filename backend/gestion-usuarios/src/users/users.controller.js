@@ -1,5 +1,9 @@
+import { ACCESS_SECRET_KEY } from "../config.js";
 import { UsersModel } from "./user.model.js"
 import { validate, validatePassword } from "./validation.js";
+import { AuthModel } from "../auth/auth.model.js";
+import jwt from "jsonwebtoken";
+import crypto from "crypto"
 
 export class UsersController {
     getAll = async (req, res) => {
@@ -33,13 +37,30 @@ export class UsersController {
         const data = result.data;
         try {
             const user = await UsersModel.create({ data });
-            res.status(201).json(user);
+            const accessToken = jwt.sign(
+                {
+                    userId: user.id,
+                },
+                ACCESS_SECRET_KEY,
+                {
+                    expiresIn: "12h"
+                }
+            );
+            const refreshToken = crypto.randomBytes(64).toString('hex');
+            await AuthModel.storeRefreshToken({ userId: user[0].id, refreshToken }); 
+
+            res.status(201).json({
+                user: user,
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            });
         }
         catch (err) {
             console.log(err);
             res.status(500).json({ error: 'Error al crear el usuario:' });
         }
     }
+
 
     changePassword = async (req, res) => {
         const { id } = req.params;

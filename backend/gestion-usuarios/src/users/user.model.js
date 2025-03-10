@@ -22,6 +22,15 @@ export class UsersModel {
         }
     }
 
+    static async getByEmail({ email }) {
+        try {
+            const [rows] = await getConnection().query('SELECT * FROM usersTable WHERE email = ?', [email]);
+            return rows[0];
+        } catch (err) {
+            throw new Error('Error al buscar el usuario: ' + err.message);
+        }
+    }
+
     static async create({ data }) {
         const {
             username,
