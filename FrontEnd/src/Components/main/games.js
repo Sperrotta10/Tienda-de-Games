@@ -14,7 +14,7 @@ export default function Games() {
           <div className={styles["games__card-image-container"]}>
             <Image
               className={styles["games__card-image"]}
-              src="/assets/images/monster_hunter_wilds.jpg"
+              src="/assets/images/mh_wilds.webp"
               alt="Monster hunter"
               width={300} // Ajusta según el tamaño real de la imagen
               height={400} // Ajusta según el tamaño real de la imagen
@@ -29,7 +29,7 @@ export default function Games() {
           <div className={styles["games__card-image-container"]}>
             <Image
               className={styles["games__card-image"]}
-              src="/assets/images/monster_hunter_wilds.jpg"
+              src="/assets/images/mh_wilds.webp"
               alt="Monster hunter"
               width={300}
               height={400}
@@ -51,7 +51,7 @@ export default function Games() {
           <div className={styles["games__card-image-container"]}>
             <Image
               className={styles["games__card-image"]}
-              src="/assets/images/monster_hunter_wilds.jpg"
+              src="/assets/images/mh_wilds.webp"
               alt="Monster hunter"
               width={300}
               height={400}
@@ -66,7 +66,7 @@ export default function Games() {
           <div className={styles["games__card-image-container"]}>
             <Image
               className={styles["games__card-image"]}
-              src="/assets/images/monster_hunter_wilds.jpg"
+              src="/assets/images/mh_wilds.webp"
               alt="Monster hunter"
               width={300}
               height={400}
@@ -88,7 +88,7 @@ export default function Games() {
           <div className={styles["games__card-image-container"]}>
             <Image
               className={styles["games__card-image"]}
-              src="/assets/images/monster_hunter_wilds.jpg"
+              src="/assets/images/mh_wilds.webp"
               alt="Monster hunter"
               width={300}
               height={400}
@@ -103,7 +103,7 @@ export default function Games() {
           <div className={styles["games__card-image-container"]}>
             <Image
               className={styles["games__card-image"]}
-              src="/assets/images/monster_hunter_wilds.jpg"
+              src="/assets/images/mh_wilds.webp"
               alt="Monster hunter"
               width={300}
               height={400}
