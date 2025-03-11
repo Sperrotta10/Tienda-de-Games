@@ -24,6 +24,7 @@ body {
     min-height: 100dvh;
     background-color: var(--color-dark);
     width: 90%;
+    margin: 0 auto;
 }
 
 .main{

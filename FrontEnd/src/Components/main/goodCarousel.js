@@ -25,7 +25,7 @@ const GoodCarousel = () => {
                         <div className={styles["container-image"]}>
                             <Image
                                 className={styles["game-image"]}
-                                src={"/assets/images/monster_hunter.jpg"}
+                                src={"/assets/images/mh_wilds.webp"}
                                 alt="Monster hunter"
                                 width={500}
                                 height={500}
@@ -40,7 +40,7 @@ const GoodCarousel = () => {
                         <div className={styles["container-image"]}>
                             <Image
                                 className={styles["game-image"]}
-                                src={"/assets/images/monster_hunter.jpg"}
+                                src={"/assets/images/mh_wilds.webp"}
                                 alt="Monster hunter"
                                 width={500}
                                 height={500}
