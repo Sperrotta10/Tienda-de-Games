@@ -31,7 +31,7 @@ class ItemsService {
 
   async removeItem(usuarioId, juegoId) {
     // Verifica si el carrito del usuario existe
-    await this.carritoService.findOne(usuarioId);
+    await this.carritoService.findByUserId(usuarioId);
 
     // Busca el item en el carrito
     const item = await models.ItemCarrito.findOne({

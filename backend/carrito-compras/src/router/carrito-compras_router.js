@@ -73,14 +73,12 @@ router.get('/:usuario_id/items/:juego_id',
   }
 );
 
-router.delete('/:carritoId/items',
-  validatorHandler(getCarritoSchema, 'params'), // Validar carritoId
-  validatorHandler(addItemSchema, 'body'), // Validar los datos del ítem
+router.delete('/:usuario_id/items/:juego_id',
+  validatorHandler(getItemSchema, 'params'), // Valida ambos params
   async (req, res, next) => {
     try {
-      const { carritoId } = req.params;
-      const newItem = await carritoService.addItem(carritoId, req.body);
-      res.status(201).json(newItem);
+      const { usuario_id, juego_id } = req.params;
+      res.status(201).json(await itemsService.removeItem(juego_id, usuario_id, req.body));
     } catch (error) {
       next(error);
     }

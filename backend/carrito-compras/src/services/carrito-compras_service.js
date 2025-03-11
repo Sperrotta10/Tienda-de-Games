@@ -70,8 +70,8 @@ class CarritoService {
 
 
   async deleteItems(usuarioId) {
-    const items = await models.ItemCarrito.destroy({ where: { usuario_id: usuarioId } });
-    return items;
+    await models.ItemCarrito.destroy({ where: { usuario_id: usuarioId } });
+    return {mensaje: 'Carrito Vaciado'};
   }
 }
 
