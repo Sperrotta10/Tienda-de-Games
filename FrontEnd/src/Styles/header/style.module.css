@@ -117,4 +117,14 @@
 .no_underline{
     text-decoration: none;
     color: var(--color-light-purple);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.no_underline:hover{
+    text-decoration: none;
+    color: var(--color-light-purple);
+    transform: translateY(-3px); /* Mueve la imagen 10px hacia arriba */
+    text-shadow: 0px 1px 30px var(--color-dark-purple); /* Sombra más difusa */
+
 }
