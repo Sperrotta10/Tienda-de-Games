@@ -22,9 +22,8 @@ const CarritoSchema = {
 
 class Carrito extends Model {
   static associate(models) {
-    // La relación con items_carrito sigue existiendo
     this.hasMany(models.ItemCarrito, {
-      as: 'items',
+      as: 'itemCarritos', // Este alias debe coincidir con el include en findByUserId
       foreignKey: 'usuario_id'
     });
   }

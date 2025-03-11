@@ -20,20 +20,32 @@ class CarritoService {
       where: { usuario_id: usuarioId },
       include: [{
         model: models.ItemCarrito,
-        as: 'items',
+        as: 'itemCarritos', // Esto debe coincidir con el alias de la asociación
+        paranoid: false,
       }],
     });
 
     if (!carrito) {
       // Si no existe, lo creamos automáticamente
-        carrito = await models.Carrito.create({
-          usuario_id: usuarioId,
-          total: 0,
-        });
-      }
+      carrito = await models.Carrito.create({
+        usuario_id: usuarioId,
+        total: 0,
+      });
+    }
+
     carrito = await this.updateTotal(usuarioId);
-    return carrito;
+    console.log(Object.keys(carrito.__proto__)); // Métodos y prototipos heredados
+    console.log(carrito.get());
+
+    const items = await carrito.getItemCarritos(); // Forzar la carga manualmente
+    return {
+        usuario_id: carrito.usuario_id,
+        items: items || [],
+        total: carrito.total,
+        createdAt: carrito.createdAt
+    };
   }
+
 
   async updateTotal(usuarioId) {
     // 🔹 Buscar el carrito asociado al usuario

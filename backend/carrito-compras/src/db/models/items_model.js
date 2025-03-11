@@ -9,9 +9,15 @@ const ItemCarritoSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER,
   },
-  usuario_id: {
+  usuario_id: { // Se relaciona con usuario_id del carrito
     allowNull: false,
     type: DataTypes.STRING,
+    references: {
+      model: 'carrito_compras',
+      key: 'usuario_id',
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
   },
   juego_id: {
     allowNull: false,

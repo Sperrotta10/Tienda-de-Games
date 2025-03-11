@@ -7,14 +7,12 @@ const titulo = Joi.string().required();
 const precio_unitario = Joi.number().min(0).required();
 
 const addItemSchema = Joi.object({
-  usuario_id, // Identifica a quién pertenece el carrito
   juego_id, // Identifica el juego
   titulo, // Se guarda el nombre del juego
   precio_unitario, // Se guarda el precio del juego
 });
 
 const removeItemSchema = Joi.object({
-  usuario_id,
   juego_id, // Solo se necesita usuario_id y juego_id para eliminar
 });
 
