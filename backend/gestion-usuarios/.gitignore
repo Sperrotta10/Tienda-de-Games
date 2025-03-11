@@ -1,0 +1,42 @@
+# General
+node_modules/
+.env
+.DS_Store
+*.log
+tmp/
+temp/
+*.tmp
+*.swp
+*.lock
+
+# Next.js
+/.next/
+/out/
+/build/
+next-env.d.ts
+
+# Express
+/dist/
+
+# Docker Compose
+/docker-compose.override.yml
+/docker-compose.prod.yml
+
+# MySQL
+/var/lib/mysql/
+
+# MongoDB
+/mongodb/data/log/mongod.log
+/data/db
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+# Credentials
+**/keys/*
+**/certs/*
+/passwords.txt
