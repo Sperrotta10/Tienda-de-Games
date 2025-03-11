@@ -1,5 +1,5 @@
 
-import Offers from "./offerts";
+import Offers from "./offerts/offerts";
 import Games from "./games";
 import Announcements from "./announcements";
 
