@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../../Styles/library.module.css';
 
-const GameCard = ({ gameName, backgroundImage }) => {
+const GameCard = ({ gameName, backgroundImage ="" }) => {
     return (
         <div className={styles.cardContainer}>
             <div className={styles.imageBackground}>

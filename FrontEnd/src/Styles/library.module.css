@@ -167,7 +167,7 @@
 }
 
 .pagination_button:disabled {
-  background-color: var(--color-gray);
+  background-color: var(--color-dark-gray);
   color: var(--color-medium-purple);
   cursor: not-allowed;
 }
