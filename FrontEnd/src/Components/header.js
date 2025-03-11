@@ -31,7 +31,7 @@ export default function Header() {
             </li>
             <li className={`${styles["header__user-item"]} ${styles["header__user-item--cart"]}`}>
               <Link
-                href="/Shopping-Cart"
+                href="/Carrito-Compras"
                 className={styles.no_underline}
               >
                 <Image
