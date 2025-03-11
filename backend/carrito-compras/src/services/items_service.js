@@ -50,6 +50,18 @@ class ItemsService {
 
     return { mensaje: 'Juego eliminado del carrito' };
   }
+
+  async getItem(usuario_id, juego_id) {
+    // Verifica si el carrito del usuario existe
+    await this.carritoService.findByUserId(usuario_id);
+
+    // Busca los items del carrito
+    const items = await models.ItemCarrito.findAll({
+      where: { juego_id: juego_id },
+    });
+
+    return items;
+  }
 }
 
 module.exports = ItemsService;

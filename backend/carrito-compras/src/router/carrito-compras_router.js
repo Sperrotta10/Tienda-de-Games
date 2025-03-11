@@ -60,15 +60,13 @@ router.post('/:usuarioId/items',
   }
 );
 
-router.get('/:usuarioId/items/:itemId',
-  validatorHandler(getCarritoSchema, 'params'), // Validar usuarioId
-  validatorHandler(addItemSchema, 'body'), // Validar los datos del ítem
-  validatorHandler(getItemSchema, 'params'), // Validar itemId
+router.get('/:usuario_id/items/:juego_id',
+  validatorHandler(getItemSchema, 'params'), // Valida ambos params
   async (req, res, next) => {
     try {
-      const { usuarioId } = req.params;
-      const newItem = await itemsService.addItem(usuarioId, req.body);
-      res.status(201).json(newItem);
+      const { usuario_id, juego_id } = req.params;
+      const item = await itemsService.getItem(juego_id, usuario_id, req.body);
+      res.status(201).json(item);
     } catch (error) {
       next(error);
     }
