@@ -3,55 +3,43 @@ import GameCard from "../../Components/biblioteca/GameCard.js";
 import DropBox from "../../Components/biblioteca/Dropbox.js";
 
 export default function library() {
-
-    const handleSelect = (option) => {
-        console.log("Seleccionaste:", option);
-      };
+    const games = [
+        {
+          gameName: "Fifa 25",
+          backgroundImage: "fifa25.avif"
+        },
+        {
+          gameName: "Monster Hunter Wilds",
+          backgroundImage: "mh_wilds.webp"
+        },
+        {
+          gameName: "Mortal Kombat 1",
+          backgroundImage: "Mortal_Kombat_1.webp"
+        },
+        {
+          gameName: "Lol",
+          backgroundImage: "lol.png"
+        },
+        {
+            gameName: "Dragon Ball",
+            backgroundImage: "kokun.png"
+          },
+          {
+            gameName: "El bicho",
+            backgroundImage: "siuu.jpeg"
+          }
+      ];
     return (
         <div className={estilos.library_container}>
             <h1 className={estilos.title}>Biblioteca</h1>
             <div className={estilos.games_container}>
-                <GameCard
-                    gameName="Monster Hunter Wilds"
-                    backgroundImage="mh_wilds.webp"
+            {games.map((game, index) => (
+                <GameCard 
+                key={index} 
+                gameName={game.gameName} 
+                backgroundImage={game.backgroundImage} 
                 />
-                <GameCard
-                    gameName="Mortal Kombat 1"
-                    backgroundImage="Mortal_Kombat_1.webp"
-                />
-                <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                 <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                 <GameCard
-                    gameName="Fifa 25"
-                    backgroundImage="fifa25.avif"
-                />
-                
+            ))}  
             </div>
             
             <div className={estilos.dropbox_container}>
