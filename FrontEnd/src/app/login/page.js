@@ -22,8 +22,21 @@ export default function LoginPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(credentials);
+
+        await axios.post('http://127.0.0.1:2004/auth/login', credentials)
+  .then(response => {
+    // La petición fue exitosa
+    console.log('Datos recibidos:', response.data);
+    // Aquí puedes procesar los datos recibidos
+  })
+  .catch(error => {
+    // Ocurrió un error durante la petición
+    console.error('Error:', error);
+    // Aquí puedes manejar el error
+  });
         
-        //const response = await axios.post('/api/auth/login', credentials);
+        //const response = await axios.post('http://localhost:2004/auth/login', credentials);
+        //console.log(response);
         //console.log(response.status);
         //if (response.status == 200) {
         //    router.push('/dashboard');
