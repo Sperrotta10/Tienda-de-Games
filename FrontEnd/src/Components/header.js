@@ -30,14 +30,19 @@ export default function Header() {
               />
             </li>
             <li className={`${styles["header__user-item"]} ${styles["header__user-item--cart"]}`}>
-              <Image
-                className={styles["header__user-icon"]}
-                src="/assets/icons/cart.svg"
-                alt="cart icon"
-                width={33}
-                height={34}
-                unoptimized
-              />
+              <Link
+                href="/Shopping-Cart"
+                className={styles.no_underline}
+              >
+                <Image
+                  className={styles["header__user-icon"]}
+                  src="/assets/icons/cart.svg"
+                  alt="cart icon"
+                  width={33}
+                  height={34}
+                  unoptimized
+                />
+              </Link>
             </li>
           </ul>
         </li>
