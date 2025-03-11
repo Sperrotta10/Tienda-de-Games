@@ -45,6 +45,7 @@
     overflow: hidden;
     margin: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 0px 10px var(--color-dark-purple); /* Sombra más difusa */
 
   }
 
