@@ -28,8 +28,10 @@ export default function LoginPage() {
             const { accessToken, refreshToken } = response.data;
     
             // Guardar los tokens en localStorage
-            localStorage.setItem('access_token', accessToken);
-            localStorage.setItem('refresh_token', refreshToken);
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+            console.log(localStorage.getItem('accessToken'))
+            console.log(localStorage.getItem('refreshToken'))
             router.push('/');
 
         } catch (error) {

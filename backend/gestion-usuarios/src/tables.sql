@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS usersTable (
     is_active BOOLEAN DEFAULT TRUE,
     is_admin BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    -- TODO
+    -- Agregar fotos a la bd y el servicio
 );
 CREATE TABLE IF NOT EXISTS refreshTokens (
     id INT AUTO_INCREMENT PRIMARY KEY,
