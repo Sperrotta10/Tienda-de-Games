@@ -1,0 +1,162 @@
+.title{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--color-ligth-purple);
+    margin: 1%;
+}
+
+.carrito_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 400px; /* Tamaño fijo */
+    padding: 20px;
+    border: 2px solid var(--color-dark-purple);
+    gap: 20px;
+}
+
+
+
+.left_side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 100%; /* Ajusta la altura máxima según el diseño */
+    overflow-y: auto; /* Agrega scroll vertical */
+    padding: 0 20px; /* Evita que el scroll tape contenido */
+}
+
+
+
+.right_side {
+    flex:  0.5; /* Ocupa el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    gap: 20px;
+}
+
+.total{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--color-white);
+    margin: 1%;
+}
+
+.total_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 150px; /* Ajusta el tamaño si es necesario */
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left; /* Mantiene alineado el texto */
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.checkout_button {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    align-self: center; /* Lo centra horizontalmente */
+    padding: 10px 20px;
+    width: 100%;
+    height: 15%; /* Ajusta el tamaño si es necesario */
+    background-color: var(--color-medium-purple);
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*     Styles de los items    */
+.item_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    flex: none;
+    border: solid 1px var(--color-medium-purple);
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 100px;
+    min-height: 100px; /* Asegura un tamaño mínimo */
+}
+
+.game_image {
+    width: 80px;  /* Ajusta según el diseño */
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+
+.info_container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.game_name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.game_price {
+    font-size: 24px;
+    color: var(--color-white);
+    font-weight: bold;
+    margin: 5px 0 0 0;
+    margin-right: 10px;
+}
+
+/*     Styles del botón de Scroll    */
+
+
+.left_side::-webkit-scrollbar-track {
+    background: var(--color-dark); /* Color del fondo del scroll */
+    border-radius: 10px;
+}
+
+.left_side::-webkit-scrollbar-thumb {
+    background: var(--color-medium-purple); /* Color del "thumb" (barra que se mueve) */
+    border-radius: 10px;
+}
+
+.left_side::-webkit-scrollbar-thumb:hover {
+    background: var(--color-light-purple); /* Cambio de color al pasar el mouse */
+}
+
+/* Para Firefox */
+.left_side {
+    scrollbar-color: var(--color-medium-purple) var(--color-dark); 
+    scrollbar-width: 20px;
+}
+
+.impuestos_texto {
+    font-size: 16px;
+    color: var(--color-light-gray);
+}
+
+.remove_button {
+    background-color: var(--color-dark-purple);
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
