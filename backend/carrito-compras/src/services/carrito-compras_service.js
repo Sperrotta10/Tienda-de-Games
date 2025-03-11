@@ -15,18 +15,6 @@ class CarritoService {
     return newCarrito;
   }
 
-  async findOne(usuarioId) {
-    const carrito = await models.Carrito.findByPk(usuarioId, {
-      include: [{ model: models.ItemCarrito, as: 'items' }],
-    });
-
-    if (!carrito) {
-      throw boom.notFound('Carrito no encontrado');
-    }
-
-    return carrito;
-  }
-
   async findByUserId(usuarioId) {
     let carrito = await models.Carrito.findOne({
       where: { usuario_id: usuarioId },
@@ -43,20 +31,35 @@ class CarritoService {
           total: 0,
         });
       }
-
+    carrito = await this.updateTotal(usuarioId);
     return carrito;
   }
 
   async updateTotal(usuarioId) {
-    const carrito = await this.findOne(usuarioId);
+    // 🔹 Buscar el carrito asociado al usuario
+    const carrito = await models.Carrito.findOne({
+      where: { usuario_id: usuarioId }
+    });
+
+    if (!carrito) {
+      throw boom.notFound('Carrito no encontrado');
+    }
+
     const items = await models.ItemCarrito.findAll({ where: { usuario_id: usuarioId } });
 
-    // Calcula el total sumando el precio de los juegos en el carrito
+    // 🔹 Calcular el total sumando el precio de los juegos
     const total = items.reduce((sum, item) => sum + item.precio_unitario, 0);
 
-    // Actualiza el total en la base de datos
+    // 🔹 Actualizar el total en la base de datos
     await carrito.update({ total });
+
     return carrito;
+  }
+
+
+  async deleteItems(usuarioId) {
+    const items = await models.ItemCarrito.destroy({ where: { usuario_id: usuarioId } });
+    return items;
   }
 }
 

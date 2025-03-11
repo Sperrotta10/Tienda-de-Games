@@ -1,6 +1,6 @@
 const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
-const CarritoService = require('./carrito_service');
+const CarritoService = require('./carrito-compras_service');
 
 class ItemsService {
   constructor() {
@@ -9,7 +9,7 @@ class ItemsService {
 
   async addItem(usuarioId, data) {
     // Verifica si el carrito del usuario existe
-    await this.carritoService.findOne(usuarioId);
+    await this.carritoService.findByUserId(usuarioId);
 
     // Verifica si el juego ya está en el carrito
     const itemExistente = await models.ItemCarrito.findOne({
