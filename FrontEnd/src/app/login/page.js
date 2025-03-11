@@ -5,6 +5,8 @@ import {useRouter} from 'next/navigation';
 
 export default function LoginPage() {
 
+    const [error, setError] = useState('');
+
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
@@ -21,28 +23,20 @@ export default function LoginPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(credentials);
+        try {
+            const response = await axios.post('http://localhost:2004/auth/login', credentials);
+            const { accessToken, refreshToken } = response.data;
+    
+            // Guardar los tokens en localStorage
+            localStorage.setItem('access_token', accessToken);
+            localStorage.setItem('refresh_token', refreshToken);
+            router.push('/');
 
-        await axios.post('http://127.0.0.1:2004/auth/login', credentials)
-  .then(response => {
-    // La petición fue exitosa
-    console.log('Datos recibidos:', response.data);
-    // Aquí puedes procesar los datos recibidos
-  })
-  .catch(error => {
-    // Ocurrió un error durante la petición
-    console.error('Error:', error);
-    // Aquí puedes manejar el error
-  });
-        
-        //const response = await axios.post('http://localhost:2004/auth/login', credentials);
-        //console.log(response);
-        //console.log(response.status);
-        //if (response.status == 200) {
-        //    router.push('/dashboard');
-        //}
-        //console.log(response);
-        //
+        } catch (error) {
+            console.error('Error en el login:', error);
+            setError('Credenciales incorrectas');
+        }
+    
     }
 
     return (
@@ -60,6 +54,7 @@ export default function LoginPage() {
                 <button>
                     Login
                 </button>
+                {error && <p>{error}</p>}
             </form>
         </div>
     )
