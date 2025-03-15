@@ -1,0 +1,73 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* Sidebar contraído por defecto */
+    height: 100vh;
+    background-color: var(--color-dark);
+    color: white;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  
+  .sidebar:hover {
+    width: 200px; /* Se expande cuando pasas el mouse */
+    border-right: 1px solid rgba(147, 0, 192, 0.5); /* Ajusta el último valor (0.5) */
+}
+  
+  .sidebarNav {
+    padding-top: 40px;
+    list-style: none;
+    margin: 0;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: white;
+    position: relative;
+  }
+  
+  .navItem:hover {
+    background: #333;
+  }
+  
+  .icon {
+    font-size: 24px;
+    min-width: 40px; /* Mantiene los iconos alineados */
+    text-align: center;
+  }
+  
+  .navItem span, 
+  .navItem .navLink {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    white-space: nowrap;
+    text-decoration: none; /* Quita el subrayado del texto */
+    color: white;
+  }
+  
+  .sidebar:hover .navItem span, 
+  .sidebar:hover .navItem .navLink {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background-color: var(--color-dark);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
