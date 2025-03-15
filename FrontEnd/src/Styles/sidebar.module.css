@@ -1,0 +1,105 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: var(--color-dark);
+  color: white;
+  transition: width 0.3s ease-in-out;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 200px;
+  border-right: 1px solid rgba(147, 0, 192, 0.5);
+}
+
+/* 🔥 LOGO: Imagen siempre visible */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+}
+
+/* 🔥 Oculta solo el texto del logo */
+.logo span {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  white-space: nowrap;
+  color: white;
+  margin-left: 10px;
+}
+
+/* 🔥 Muestra el texto solo cuando está expandido */
+.sidebar:hover .logo span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 🔥 NAV */
+.sidebarNav {
+  padding-top: 20px;
+  list-style: none;
+  margin: 0;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.navItem:hover {
+  background: #333;
+}
+
+/* 🔥 ICONOS SIEMPRE VISIBLES */
+.icon {
+  text-align: center;
+}
+
+/* 🔥 Mantiene la imagen SIEMPRE visible */
+.navItem img {
+  width: 24px;
+  height: auto;
+}
+
+/* 🔥 Oculta el texto al inicio */
+.navItem span,
+.navLink span {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  white-space: nowrap;
+  margin-left: 10px;
+  color: white;
+}
+
+.sidebar:hover .navItem span,
+.sidebar:hover .navLink span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}

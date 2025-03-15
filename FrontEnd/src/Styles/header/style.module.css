@@ -1,7 +1,7 @@
 .header{
     position: sticky;
     z-index: 5;
-    max-width: clamp(1000px, 90vw, 1280px);
+    max-width: 90%;
     margin: 0 auto;
     top: 0;
     background-color: var(--color-dark);
@@ -9,6 +9,7 @@
 
 .header__list{
     display: flex;
+    flex: 1;
     justify-content: space-between;
     gap: 1rem;
     width: 90%;

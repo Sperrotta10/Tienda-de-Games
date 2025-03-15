@@ -1,56 +1,55 @@
 .dropbox {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-  }
-  
-  .dropboxButton {
-    width: 100%;
-    padding: 5px;
-    font-size: 14px;
-    background: var(--color-ligth-purple);
-    border: 1px solid var(--color-medium-purple-transparent);
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s ease;
-    color: var(--color-ligth-purple); /* Texto blanco en el botón */
-  }
-  
-  .dropboxButton:hover {
-    background: #e0e0e0;
-    color: black;
-  }
-  
-  .arrow {
-    margin-left: 10px;
-  }
-  
-  .dropboxMenu {
-    position: absolute;
-    width: 100%;
-    background: var(--color-dark); /* 📌 Fondo oscuro */
-    border: 1px solid #333;
-    box-shadow: 0px 5px 10px var(--color-medium-purple-transparent);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 100;
-    bottom: 100%;
-    transform: translateY(-5px);
-  }
-  
-  .dropboxItem {
-    padding: 10px;
-    cursor: pointer;
-    color: #BC6FF1; /* 📌 Letras púrpura */
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-  
-  .dropboxItem:hover {
-    background: #333; /* 📌 Hover más oscuro */
-    color: #d8b4fe; /* 📌 Púrpura más claro al pasar el mouse */
-  }
-  
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.dropboxButton {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-ligth-purple);
+  border: 1px solid var(--color-medium-purple-transparent);
+  border-radius: 5px;
+  color: var(--color-ligth-purple);
+  box-shadow: 0px 0px 10px var(--color-medium-purple-transparent);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Para que quede por encima del menú */
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Cuando el menú está abierto, la flecha gira */
+.dropboxButton.open .arrow {
+  transform: rotate(180deg);
+}
+
+.dropboxMenu {
+  position: absolute;
+  top: 100%; /* Lo coloca justo debajo del botón */
+  left: 0;
+  width: 100%;
+  background: var(--color-dark); /* 📌 Fondo oscuro */
+  border: 1px solid #333;
+  box-shadow: 0px 5px 10px var(--color-medium-purple-transparent);
+  list-style: none;
+  padding: 0;
+  margin-top: 5px; /* Pequeño margen para separar */
+  z-index: 20;
+}
+
+.dropboxItem {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropboxItem:hover {
+  background: #f0f0f0;
+}
