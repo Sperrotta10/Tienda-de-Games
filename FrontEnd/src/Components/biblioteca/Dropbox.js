@@ -26,7 +26,7 @@ export default function DropBox({ options, onSelect }) {
     return (
       <div className={styles.dropbox} ref={dropdownRef}>
         <button className={styles.dropboxButton} onClick={() => setIsOpen(!isOpen)}>
-          {selected} <span className={styles.arrow}>▲</span> {/* Cambié la flecha */}
+          {selected} <span className={styles.arrow}>▼</span> {/* Cambié la flecha */}
         </button>
         {isOpen && (
           <ul className={styles.dropboxMenu}>
