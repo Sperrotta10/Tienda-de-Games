@@ -23,8 +23,8 @@ export default function Sidebar() {
             <Image 
               src="/assets/icons/cart.svg"
               alt="Inicio"
-              width={24}
-              height={24}
+              width={30}
+              height={30}
               className={styles.icon}
             />
             <span>Inicio</span>
@@ -35,8 +35,8 @@ export default function Sidebar() {
           <Image 
             src="/assets/icons/cart.svg"
             alt="Juegos"
-            width={18}
-            height={18}
+            width={30}
+            height={30}
             className={styles.icon}
           />
           <span>Juegos</span>
@@ -47,8 +47,8 @@ export default function Sidebar() {
             <Image 
               src="/assets/icons/cart.svg"
               alt="Biblioteca"
-              width={24}
-              height={24}
+              width={30}
+              height={30}
               className={styles.icon}
             />
             <span>Biblioteca</span>
