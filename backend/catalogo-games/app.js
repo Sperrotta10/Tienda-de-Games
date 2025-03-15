@@ -13,7 +13,11 @@ const app = express()
 app.use(express.json())
 
 //routes
+<<<<<<< HEAD
 app.use('/api/catalogo-games', routes())
+=======
+app.use('/', routes())
+>>>>>>> origin/testeo
 
 // conexion a base de datos y servidor
 mongoose.connect(process.env.MONGO_URI)

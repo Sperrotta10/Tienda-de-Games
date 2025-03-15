@@ -24,11 +24,12 @@ body {
     min-height: 100dvh;
     background-color: var(--color-dark);
     width: 90%;
+    margin: 0 auto;
 }
 
 .main{
     max-width: clamp(1000px, 90vw, 1280px);
-    margin: 0;
+    margin: 0 auto;
     width: 90%;
 }
 

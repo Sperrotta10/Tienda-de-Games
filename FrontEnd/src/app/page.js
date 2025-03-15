@@ -3,8 +3,6 @@ import Main from "../Components/main/main.js";
 export default function Home() {
   return (
     <Main />
-
-    
   );
 }
 {/* <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>

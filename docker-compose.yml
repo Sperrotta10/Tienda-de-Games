@@ -16,5 +16,70 @@ services:
     environment:
       - MONGO_URI=${MONGO_URI_GAMES}
 
+  mongodb3:
+    image: mongo:4.4
+    container_name: mongodb3
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodb_data3:/data/db
+
+  gestion-pedidos:
+    build: ./backend/gestion-pedidos
+    ports:
+      - "2003:2003"
+    depends_on:
+      - mongodb3
+    environment:
+      - MONGO_URI=${MONGO_URI_PEDIDOS}
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${USERS_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${USERS_MYSQL_DATABASE}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p", "rootpassword"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  gestion-usuarios:
+    build:
+      context: ./backend/gestion-usuarios
+    ports:
+      - "2004:2004"
+    volumes:
+      - ./backend/gestion-usuarios:/app
+    environment:
+      PORT: ${USERS_PORT}
+      DB_PORT: ${USERS_DB_PORT}
+      DB_HOST: ${USERS_DB_HOST}
+      DB_NAME: ${USERS_DB_NAME}
+      DB_USER: ${USERS_DB_USER}
+      DB_PASSWORD: ${USERS_DB_PASSWORD}
+      SALT_ROUNDS: ${USERS_SALT_ROUNDS}
+      ACCESS_SECRET_KEY: ${USERS_ACCESS_SECRET_KEY}
+      REFRESH_SECRET_KEY: ${USERS_REFRESH_SECRET_KEY}
+    depends_on:
+      - mysql 
+      
+  nginx:
+    image: nginx:latest
+    ports:
+      - "81:81"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - gestion-usuarios
+      - catalogo-games
+      - gestion-pedidos
+
 volumes:
   mongodb_data:
+  mysql_data:
+  mongodb_data3:
