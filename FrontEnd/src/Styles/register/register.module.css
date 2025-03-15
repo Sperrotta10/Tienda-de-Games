@@ -1,11 +1,11 @@
 
-.login-container{
+.register-container{
     height: calc(100dvh - 74px);
     display: grid;
     place-content: center;
 }
 
-.login-form{
+.register-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,11 +17,11 @@
     transform: translate(0, -37px);
 }
 
-.login-title{
+.register-title{
     margin-bottom: 1rem;
 }
 
-.login-input{
+.register-input{
     outline: none;
     background-color: var(--color-dark);
     height: 2.25rem;
@@ -36,11 +36,11 @@
     margin-bottom: 1rem;
 }
 
-.login-input:has(+ .login-error) {
+.register-input:has(+ .register-error) {
     margin-bottom: 0;
 }
 
-.login-error{
+.register-error{
     color: var(--color-light-purple)  ;
     margin-bottom: 1rem;
     margin-top: 0.25rem;
@@ -58,7 +58,7 @@
     }
 }
 
-.login-button{
+.register-button{
     outline: none;
     background-color: var(--color-medium-purple);
     width: 100%; /* 350 */
@@ -76,7 +76,7 @@
 }
 
 
-.login-link{
+.register-link{
     color: var(--color-light-purple);
     text-decoration: underline;
     cursor: pointer;

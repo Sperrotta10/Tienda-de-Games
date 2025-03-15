@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useState} from 'react';
 import {useRouter} from 'next/navigation';
 import style from '../../Styles/login/login.module.css';
+import Link from 'next/link';
 
 export default function LoginPage() {
 
@@ -29,12 +30,12 @@ export default function LoginPage() {
             const { accessToken, refreshToken } = response.data;
     
             // Guardar los tokens en localStorage
-            localStorage.setItem('access_token', accessToken);
-            localStorage.setItem('refresh_token', refreshToken);
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
             router.push('/');
 
         } catch (error) {
-            console.error('Error en el login:', error);
+            /* console.error('Error en el login:', error); */
             setError('Credenciales incorrectas');
         }
     
@@ -53,11 +54,12 @@ export default function LoginPage() {
                     onChange={handleChange}
                     name="password"
                 />
+                {error && <p className={style['login-error']}>{error}</p>}
                 <button className={style['login-button']}>
                     Login
                 </button>
-                {error && <p>{error}</p>}
-                <span><a className={style['login-link']} href="/register">¿No tienes cuenta? Registrate</a></span>
+                
+                <span><Link className={style['login-link']} href="/register">¿No tienes cuenta? Registrate</Link></span>
             </form>
         </div>
     )
