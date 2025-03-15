@@ -14,7 +14,7 @@
     padding: 1rem;
     max-width: clamp(300px, 50vw, 500px);
     width: 100vw;
-    transform: translate(0, -74px);
+    transform: translate(0, -37px);
 }
 
 .login-title{
