@@ -2,6 +2,7 @@
 import axios from 'axios';
 import {useState} from 'react';
 import {useRouter} from 'next/navigation';
+import style from '../../Styles/login/login.module.css';
 
 export default function LoginPage() {
 
@@ -40,21 +41,23 @@ export default function LoginPage() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="email" placeholder="Email" 
+        <div className={style['login-container']}>
+            <form className={style['login-form']} onSubmit={handleSubmit}>
+                <h1 className={style['login-title']}>Bienvenido!</h1>
+                <input className={style['login-input']} type="email" placeholder="Email" 
                     onChange={handleChange}
                     name="email"
                     
                 />
-                <input type="password" placeholder="Password" 
+                <input className={style['login-input']} type="password" placeholder="Password" 
                     onChange={handleChange}
                     name="password"
                 />
-                <button>
+                <button className={style['login-button']}>
                     Login
                 </button>
                 {error && <p>{error}</p>}
+                <span><a className={style['login-link']} href="/register">¿No tienes cuenta? Registrate</a></span>
             </form>
         </div>
     )
