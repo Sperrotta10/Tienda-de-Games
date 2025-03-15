@@ -50,8 +50,13 @@ export default function Library() {
 
     return (
         <div className={estilos.library_container}>
-            <h1 className={estilos.title}>Biblioteca</h1>
-
+                <div className={estilos.dropbox_container}>
+                <h1 className={estilos.title}>Biblioteca</h1>
+                    <h2 className={estilos.nose}>Ordenar por:</h2>
+                    <DropBox 
+                        options={["Recientemente", "Orden Alfabético", "Fecha de Lanzamiento", "Fecha de Adquisición"]}
+                    />
+                </div>
             {/* Contenedor que alinea los botones y los juegos */}
             <div className={estilos.games_wrapper}>
                 {/* Botón para ir a la página anterior */}
@@ -84,12 +89,7 @@ export default function Library() {
                 </button>
             </div>
 
-            <div className={estilos.dropbox_container}>
-                <h2>Ordenar por:</h2>
-                <DropBox 
-                    options={["Recientemente", "Orden Alfabético", "Fecha de Lanzamiento", "Fecha de Adquisición"]}
-                />
-            </div>
+            
         </div>
     );
 }
