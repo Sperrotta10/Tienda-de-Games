@@ -1,8 +1,8 @@
-import header from "../Components/header";
-import "../Styles/style.css"
-import Script from 'next/script'
-import {inter} from "../fonts/fonts";
-import '../Styles/globalStyles.css'
+import Header from "../Components/header";
+import Sidebar from "../Components/sidebar";
+import "../Styles/style.css";
+import { inter } from "../fonts/fonts";
+import '../Styles/globalStyles.css';
 
 export default function RootLayout({ children }) {
   return (
@@ -22,10 +22,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} antialiased`}>
-        {header()}
-        <main className="main">{children}</main>
-        
-        {/* <Script src="../Scripts/script.js" strategy="afterInteractive"/> */}
+        <div className="layout">
+          <Sidebar />
+          <div className="mainContent">
+            <Header />
+            <main className="main">{children}</main>
+          </div>
+        </div>
       </body>
     </html>
   );
