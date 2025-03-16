@@ -28,9 +28,9 @@ body {
 }
 
 .main{
-    max-width: clamp(1000px, 90vw, 1280px);
+    max-width: clamp(1000px, 90%, 1600px);
     margin: 0 auto;
-    width: 90%;
+/*     width: 90%; */
 }
 
 /* Cambiar el color de los dots */
@@ -54,4 +54,7 @@ body {
     color: blue; /* Cambia 'blue' por el color deseado */
   }
 
-  
+.slick-track{
+    display: flex !important;
+    gap: 1rem;
+  }

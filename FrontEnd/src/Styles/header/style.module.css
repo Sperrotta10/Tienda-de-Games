@@ -1,10 +1,11 @@
 .header{
     position: sticky;
     z-index: 5;
-    max-width: 90%;
+    /* max-width: 90%; */
     margin: 0 auto;
     top: 0;
     background-color: var(--color-dark);
+    max-width: clamp(1000px, 90%, 1600px);
 }
 
 .header__list{
@@ -12,7 +13,7 @@
     flex: 1;
     justify-content: space-between;
     gap: 1rem;
-    width: 90%;
+/*     width: 90%; */
     font-weight: bold;
     align-content: stretch;
     margin: 0 auto;

@@ -1,6 +1,6 @@
 import Header from "../Components/header";
 import Sidebar from "../Components/sidebar";
-import "../Styles/style.css";
+/* import "../Styles/style.css"; */
 import { inter } from "../fonts/fonts";
 import "../Styles/globalStyles.css";
 import { AuthProvider } from "@/utils/AuthContext";
