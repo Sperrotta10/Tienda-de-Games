@@ -39,7 +39,7 @@ export class UsersController {
             const user = await UsersModel.create({ data });
             const accessToken = jwt.sign(
                 {
-                    userId: user.id,
+                    userId: user[0].id,
                 },
                 ACCESS_SECRET_KEY,
                 {
