@@ -1,11 +1,13 @@
 'use client';
 import axios from 'axios';
-import {useState} from 'react';
+import {use, useState, useContext} from 'react';
 import {useRouter} from 'next/navigation';
 import style from '../../Styles/register/register.module.css'
 import Link from 'next/link';
+import { AuthContext } from '../../utils/AuthContext';
 export default function RegisterPage() {
 
+    const { login, print } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const [credentials, setCredentials] = useState({
@@ -28,15 +30,21 @@ export default function RegisterPage() {
         try {
             const response = await axios.post('http://localhost:2004/users/create', credentials);
             console.log(response.data);
-            const { accessToken, refreshToken } = response.data;
+            const { accessToken, refreshToken, user } = response.data;
+            const { id, username, email } = user[0];
     
             // Guardar los tokens en localStorage
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('refreshToken', refreshToken);
-            router.push('/');
+
+            // Actualizar el estado de autenticación
+            login(accessToken, refreshToken, {username: username, email: email}, id);
+            print();
+            /* router.push('/'); */
 
         } catch (error) {
             /* console.log('Error en el register:', error); */
+            print();
             setError('Error en el registro');
         }
     

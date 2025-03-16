@@ -1,12 +1,14 @@
 'use client';
 import axios from 'axios';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {useRouter} from 'next/navigation';
 import style from '../../Styles/login/login.module.css';
 import Link from 'next/link';
+import { AuthContext } from '../../utils/AuthContext';
+import { axiosInstance } from '@/utils/axiosInstance';
 
 export default function LoginPage() {
-
+    const { login, print } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const [credentials, setCredentials] = useState({
@@ -32,10 +34,24 @@ export default function LoginPage() {
             // Guardar los tokens en localStorage
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('refreshToken', refreshToken);
-            router.push('/');
+    
+            // Obtener el id
+            const response2 = await axiosInstance.get("/auth");
+            const { userId } = response2.data.user;
+
+            // Obtener los datos del usuario
+            const response3 = await axiosInstance.get(`/users/${userId}`);
+            const userData = response3.data[0];
+            
+
+            // Actualizar el estado de autenticación
+            login(accessToken, refreshToken, userData, userId);
+            print();
+            /* router.push('/'); */
 
         } catch (error) {
-            /* console.error('Error en el login:', error); */
+            print();
+            console.error('Error en el login:', error);
             setError('Credenciales incorrectas');
         }
     
