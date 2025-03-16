@@ -1,13 +1,18 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../Styles/sidebar.module.css";
+import { useContext } from "react";
+import { AuthContext } from "@/utils/AuthContext";
 
 export default function Sidebar() {
+  const { auth, logout } = useContext(AuthContext);
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
         <Link href="/">
-          <Image 
+          <Image
             src="/assets/icons/search.svg"
             alt="Logo"
             width={40}
@@ -20,7 +25,7 @@ export default function Sidebar() {
       <ul className={styles.sidebarNav}>
         <li className={styles.navItem}>
           <Link href="/" className={styles.navLink}>
-            <Image 
+            <Image
               src="/assets/icons/cart.svg"
               alt="Inicio"
               width={30}
@@ -30,9 +35,9 @@ export default function Sidebar() {
             <span>Inicio</span>
           </Link>
         </li>
-        
+
         <li className={styles.navItem}>
-          <Image 
+          <Image
             src="/assets/icons/cart.svg"
             alt="Juegos"
             width={30}
@@ -44,7 +49,7 @@ export default function Sidebar() {
 
         <li className={styles.navItem}>
           <Link href="/biblioteca" className={styles.navLink}>
-            <Image 
+            <Image
               src="/assets/icons/cart.svg"
               alt="Biblioteca"
               width={30}
@@ -54,6 +59,22 @@ export default function Sidebar() {
             <span>Biblioteca</span>
           </Link>
         </li>
+
+
+        {auth.userId && (
+          <li onClick={logout} className={styles.navItem}>
+            <Link  href="#" className={styles.navLink}>
+              <Image
+                src="/assets/icons/cart.svg"
+                alt="Biblioteca"
+                width={30}
+                height={30}
+                className={styles.icon}
+              />
+              <span>Logout</span>
+            </Link>
+          </li>
+        )}
       </ul>
     </aside>
   );

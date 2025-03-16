@@ -39,12 +39,12 @@ export default function RegisterPage() {
 
             // Actualizar el estado de autenticación
             login(accessToken, refreshToken, {username: username, email: email}, id);
-            print();
-            /* router.push('/'); */
+            /* print(); */
+            router.push('/');
 
         } catch (error) {
-            /* console.log('Error en el register:', error); */
-            print();
+            console.log('Error en el register:', error);
+            /* print(); */
             setError('Error en el registro');
         }
     

@@ -13,7 +13,8 @@ export function AuthProvider({ children }) { // Recibe los componentes hijos de 
     accessToken: null,    // Token de acceso JWT
     refreshToken: null,   // Token de refresco
     userId: null,         // ID del usuario
-    user: null            // Datos del usuario
+    user: null,           // Datos del usuario
+    initialized: false    // Bandera para saber si ya se inicializó el estado
   });
 
   
@@ -32,22 +33,24 @@ export function AuthProvider({ children }) { // Recibe los componentes hijos de 
           const { userId } = response.data.user;
           const response2 = await axiosInstance.get(`/users/${userId}`);
           const userData = response2.data[0];
-          console.log(userData);
   
           setAuth(prev => ({ 
             ...prev,
             accessToken: storedAccessToken,
             refreshToken: storedRefreshToken,
             user: userData, 
-            userId: userId
+            userId: userId,
+            initialized: true
           }));
         } catch (error) {
           console.error("Error al validar el token:", error);
           // Limpia el localStorage si el token es inválido
           localStorage.removeItem("accessToken");
           localStorage.removeItem("refreshToken");
-          setAuth({ accessToken: null, refreshToken: null, user: null, userId: null }); 
+          setAuth({ accessToken: null, refreshToken: null, user: null, userId: null, initialized: true }); 
         }
+      } else {
+        setAuth(prev => ({ ...prev, initialized: true }));
       }
     };
   
@@ -60,7 +63,8 @@ export function AuthProvider({ children }) { // Recibe los componentes hijos de 
       accessToken,
       refreshToken,
       user: userData, // Puede ser un objeto con {id, email, nombre, etc.}
-      userId: userId
+      userId: userId,
+      initialized: true
     });
   };
 
@@ -72,7 +76,8 @@ export function AuthProvider({ children }) { // Recibe los componentes hijos de 
       accessToken: null,
       refreshToken: null,
       user: null,
-      userId: null
+      userId: null,
+      initialized: true
     });
   };
 
