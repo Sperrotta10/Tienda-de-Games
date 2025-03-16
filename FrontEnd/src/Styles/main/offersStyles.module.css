@@ -8,9 +8,9 @@
 }
 
 .offers__list{
-    display: flex;
+/*     display: flex;
     flex-wrap: wrap;
-    gap: 6rem;
+    gap: 6rem; */
 }
 
 .offers__card{
@@ -21,6 +21,9 @@
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0px 0px 10px var(--color-dark-purple);
+    aspect-ratio: 2/3;
+    /* max-height: 300px;
+    max-width: 200px; */
 }
 
 .offers__card:hover{
@@ -31,8 +34,9 @@
 .offers__card-image{
     width: 100%;
     height: 100%;
+    
     object-fit: cover;
-
+    
 }
 
 .offers__card-info{

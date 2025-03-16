@@ -8,7 +8,7 @@
 
 .slider-wrapper{
     max-width: clamp(700px, 60vw, 1000px);
-    margin: 0 70px 55px;
+    margin: 0 70px 30px;
 }
 
 .container-image{
