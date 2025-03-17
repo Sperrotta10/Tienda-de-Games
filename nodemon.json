@@ -1,0 +1,9 @@
+{
+  "watch": ["src"],
+  "ext": "js,json",
+  "ignore": ["node_modules"],
+  "execMap": {
+    "js": "node --trace-warnings"
+  },
+  "restartable": "rs"
+}

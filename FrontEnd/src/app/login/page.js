@@ -24,37 +24,25 @@ export default function LoginPage() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:2004/auth/login",
-        credentials
-      );
-      const { accessToken, refreshToken } = response.data;
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:2004/auth/login', credentials);
+            const { accessToken, refreshToken } = response.data;
+    
+            // Guardar los tokens en localStorage
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+            console.log(localStorage.getItem('accessToken'))
+            console.log(localStorage.getItem('refreshToken'))
+            router.push('/');
 
-      // Guardar los tokens en localStorage
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("refreshToken", refreshToken);
-
-      // Obtener el id
-      const response2 = await axiosInstance.get("/auth");
-      const { userId } = response2.data.user;
-
-      // Obtener los datos del usuario
-      const response3 = await axiosInstance.get(`/users/${userId}`);
-      const userData = response3.data[0];
-
-      // Actualizar el estado de autenticación
-      login(accessToken, refreshToken, userData, userId);
-      /* print(); */
-      router.push("/");
-    } catch (error) {
-      /* print(); */
-      console.error("Error en el login:", error);
-      setError("Credenciales incorrectas");
+        } catch (error) {
+            console.error('Error en el login:', error);
+            setError('Credenciales incorrectas');
+        }
+    
     }
-  };
 
   return (
     <AlreadyLogged>

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import styles from "../../Styles/Dropbox.module.css"; // Importamos los estilos
+import styles from "../../Styles/DropBox.module.css"; // Importamos los estilos
 
 export default function DropBox({ options, onSelect }) {
     const [isOpen, setIsOpen] = useState(false);
