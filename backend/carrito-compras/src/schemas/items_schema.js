@@ -2,6 +2,7 @@ const Joi = require('joi');
 const { get } = require('../router/carrito-compras_router');
 
 const usuario_id = Joi.string().required();
+const item_id = Joi.string().required();
 const juego_id = Joi.string().required();
 const titulo = Joi.string().required();
 const precio_unitario = Joi.number().min(0).required();
@@ -13,12 +14,12 @@ const addItemSchema = Joi.object({
 });
 
 const removeItemSchema = Joi.object({
-  juego_id, // Solo se necesita usuario_id y juego_id para eliminar
+  item_id, // Solo se necesita usuario_id y item_id para eliminar
 });
 
 const getItemSchema = Joi.object({
   usuario_id,
-  juego_id,
+  item_id,
 });
 
 module.exports = { addItemSchema, removeItemSchema, getItemSchema };
