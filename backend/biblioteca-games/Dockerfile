@@ -1,18 +1,18 @@
 # Usamos una imagen base de Node.js
-FROM node:18-alpine
+FROM python:3.11-slim
 
 # Definir el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
 # Copiar los archivos necesarios
-COPY package.json ./
-RUN npm install
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el resto del código
 COPY . .
 
 # Exponer el puerto del servicio
-EXPOSE 2000
+EXPOSE 2005
 
 # Comando para iniciar la aplicación
-CMD ["npm", "start"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "2005"]

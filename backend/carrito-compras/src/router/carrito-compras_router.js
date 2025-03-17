@@ -60,12 +60,12 @@ router.post('/:usuarioId/items',
   }
 );
 
-router.get('/:usuario_id/items/:juego_id',
+router.get('/:usuario_id/items/:item_id',
   validatorHandler(getItemSchema, 'params'), // Valida ambos params
   async (req, res, next) => {
     try {
-      const { usuario_id, juego_id } = req.params;
-      const item = await itemsService.getItem(juego_id, usuario_id, req.body);
+      const { usuario_id, item_id } = req.params;
+      const item = await itemsService.getItem(item_id, usuario_id, req.body);
       res.status(201).json(item);
     } catch (error) {
       next(error);

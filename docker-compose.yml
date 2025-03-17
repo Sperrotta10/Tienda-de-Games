@@ -102,6 +102,13 @@ services:
     depends_on:
       - mysql 
       
+  biblioteca-games:
+    build: ./backend/biblioteca-games
+    command: sh -c "uvicorn app:app --reload --port=2005 --host=localhost"
+    ports:
+      - "2005:2005"
+    volumes:
+      - ./backend/biblioteca-games:/app
   nginx:
     image: nginx:latest
     ports:
