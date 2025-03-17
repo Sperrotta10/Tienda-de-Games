@@ -1,4 +1,38 @@
 services:
+
+  postgres:
+    image: postgres:13
+    container_name: e-commerce-carro-compras
+    environment:
+      - POSTGRES_DB=carro_compras
+      - POSTGRES_USER=jesus
+      - POSTGRES_PASSWORD=root
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+  carrito-compras:
+    build: "./backend/carrito-compras"
+    ports:
+      - "2000:2000"
+    environment:
+    - PORT=${PORT}
+    - DB_USER=${DB_USER}
+    - DB_PASSWORD=${DB_PASSWORD}
+    - DB_HOST=${DB_HOST}
+    - DB_NAME=${DB_NAME}
+    - DB_PORT=${DB_PORT}
+    depends_on:
+    - postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=ROOT
+    ports:
+      - 5050:80
+
   mongodb:
     image: mongo:4.4
     container_name: mongodb
@@ -36,7 +70,7 @@ services:
   mysql:
     image: mysql:8.0
     ports:
-      - "3307:3307"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${USERS_MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${USERS_MYSQL_DATABASE}
@@ -78,8 +112,10 @@ services:
       - gestion-usuarios
       - catalogo-games
       - gestion-pedidos
+      - carrito-compras
 
 volumes:
   mongodb_data:
   mysql_data:
   mongodb_data3:
+  postgres_data:

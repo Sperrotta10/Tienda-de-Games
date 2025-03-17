@@ -21,7 +21,7 @@ El sistema está diseñado con una arquitectura de microservicios, cada uno enfo
 - 🏗 **Node.js** con **Express** o **NestJS** → API robusta y escalable.
 - 🛢 **PostgreSQL / MongoDB** → Base de datos relacional o NoSQL.
 - 🐳 **Docker & Docker-Compose** → Contenedorización y orquestación.
-- 🔗 **gRPC / REST API** → Comunicación eficiente entre microservicios.
+- 🔗 **gRPC / REST API** → Comunicación eficiente entre microservicios. 
 
 ## 🚀 Cómo Ejecutar el Proyecto
 ### **1️⃣ Clonar el Repositorio**

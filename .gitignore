@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignorar la carpeta archivos-postgres y todo su contenido
+postgres_data
