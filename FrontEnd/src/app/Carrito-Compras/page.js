@@ -2,6 +2,7 @@
 import { useState, useMemo } from "react";
 import estilos from "../../Styles/Carrito-Compras/Carrito.module.css";
 import ItemCarrito from "../../Components/Carrito-Compras/ItemCarrito";
+import ProtectedRoute from "@/utils/ProtectedRoute";
 
 export default function ShoppingCart() {
     const [currentItems, setCurrentItems] = useState([
