@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic';
-
+import BusquedaComponent from "@/Components/busqueda/busqueda";
 export default async function BusquedaPage(props) {
     var query = '';
     query = await props.searchParams?.then((searchParams) => {
@@ -10,71 +10,33 @@ export default async function BusquedaPage(props) {
 
 
     //Esto se sustituira por una llamada a la API
-    const dataOffers = [
-        {
-            gameName: "Fifa 25",
-            backgroundImage: "fifa25.avif",
-            price: "59.99",
-            offerPrice: "19.99",
-        },
-        {
-            gameName: "Monster Hunter Wilds",
-            backgroundImage: "mh_wilds.webp",
-            price: "40",
-            offerPrice: "30",
-        },
-        {
-            gameName: "Mortal Kombat 1",
-            backgroundImage: "Mortal_Kombat_1.webp",
-            price: "60",
-            offerPrice: "50",
-        },
-        {
-            gameName: "Lol",
-            backgroundImage: "lol.png",
-            price: "10",
-            offerPrice: "2",
-        },
-        {
-            gameName: "Dragon Ball",
-            backgroundImage: "kokun.png",
-            price: "60",
-            offerPrice: "30",
-        },
-        {
-            gameName: "El bicho",
-            backgroundImage: "siuu.jpeg",
-            price: "75",
-            offerPrice: "50",
-        },
-        {
-            gameName: "Fifa 25",
-            backgroundImage: "fifa25.avif",
-            price: "59.99",
-            offerPrice: "19.99",
-        },
-        {
-            gameName: "Elden Ring",
-            backgroundImage: "elden-ring.webp",
-            price: "60",
-            offerPrice: "45",
-        }
-    ];
+    var games = null;
+    try {
+        const response = await fetch("http://localhost:81/api/catalogo-games/get-games");
 
-    const gameFiltrado = dataOffers.map( (game) => {
-        console.log("epale");
-        console.log( query);
-        console.log(game.gameName)
-        console.log(game.gameName.search(query));
-        if (game.gameName.search(query) != -1 && query!= "") {
+        if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+
+        games = await response.json();
+    } catch (error) {
+        console.error("Error al obtener los juegos:", error);
+    }
+
+    /* console.log(games); */
+    const gamesFiltrado = games.data.map((game) => {
+        /* console.log("epale");
+        console.log(query);
+        console.log(game.titulo)
+        console.log(game.titulo.search(query)); */
+        if (game.titulo.toLowerCase().search(query.toLowerCase()) != -1 && query != "") {
             return game;
         }
     })
-    console.log(gameFiltrado);
+    console.log(gamesFiltrado);
 
     return (
         <div>
             <h2>Busqueda: {query}</h2>
+            <BusquedaComponent gamesFiltados={ gamesFiltrado}></BusquedaComponent>
         </div>
     );
 }
