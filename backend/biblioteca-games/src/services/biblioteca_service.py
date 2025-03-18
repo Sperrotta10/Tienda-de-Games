@@ -34,20 +34,56 @@ def get_juego(session: SessionDep, usuario_id: int, juego_id: int):
 
     return juego
 
-def add_juego(session: SessionDep, usuario_id: int, juego: BibliotecaJuegos):
-    biblioteca = session.get(Biblioteca, usuario_id)
+def add_juegos(session: SessionDep, usuario_id: int, juegos: list[BibliotecaJuegos]):
+    # 1. Validar duplicados en la solicitud
+    ids_juegos_solicitud = [j.juego_id for j in juegos]
     
+    # Si hay IDs repetidos en el mismo request
+    if len(ids_juegos_solicitud) != len(set(ids_juegos_solicitud)):
+        duplicados = {x for x in ids_juegos_solicitud if ids_juegos_solicitud.count(x) > 1}
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Error: Juego IDs duplicados en la solicitud: {duplicados}"
+        )
+
+    # 2. Validar juegos ya existentes en la base de datos
+    stmt_existentes = select(BibliotecaJuegos).where(
+        BibliotecaJuegos.usuario_id == usuario_id,
+        BibliotecaJuegos.juego_id.in_(ids_juegos_solicitud)
+    )
+    juegos_existentes = session.exec(stmt_existentes).all()
+    
+    if juegos_existentes:
+        ids_existentes = {j.juego_id for j in juegos_existentes}
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"Error: Juegos ya existen en la biblioteca (IDs: {ids_existentes})"
+        )
+
+    # 3. Crear biblioteca si no existe (esto va DESPUÉS de las validaciones)
+    biblioteca = session.get(Biblioteca, usuario_id)
     if not biblioteca:
-        # Si la biblioteca no existe, la creamos automáticamente
-        biblioteca = Biblioteca(usuario_id=usuario_id, juegos=[])
+        biblioteca = Biblioteca(usuario_id=usuario_id)
         session.add(biblioteca)
         session.commit()
         session.refresh(biblioteca)
 
-    # Asociar el juego a la biblioteca
-    juego.usuario_id = usuario_id
-    session.add(juego)
+    # 4. Insertar nuevos juegos
+    nuevos_juegos = []
+    for juego in juegos:
+        nuevo_juego = BibliotecaJuegos(
+            titulo=juego.titulo,
+            juego_id=juego.juego_id,
+            usuario_id=usuario_id
+        )
+        session.add(nuevo_juego)
+        nuevos_juegos.append(nuevo_juego)
+    
+    # 5. Commit único para mejor performance
     session.commit()
-    session.refresh(juego)
 
-    return juego
+    # 6. Refrescar objetos (opcional, solo si necesitas datos post-insert)
+    for juego in nuevos_juegos:
+        session.refresh(juego)
+        
+    return nuevos_juegos
