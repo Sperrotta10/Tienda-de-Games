@@ -1,20 +1,25 @@
 from fastapi import HTTPException, status
 from src.db.database import SessionDep
 from src.db.models.biblioteca_model import Biblioteca, BibliotecaJuegos
+from sqlalchemy.orm import joinedload  # 🔹 Importarlo desde SQLAlchemy
+from sqlmodel import select
+
 
 def get_biblioteca(session: SessionDep, usuario_id: int):
-    biblioteca = session.get(Biblioteca, usuario_id)
-    
-    if not biblioteca:
-        # Crear una nueva biblioteca para el usuario
-        nueva_biblioteca = Biblioteca(usuario_id=usuario_id, juegos=[])
-        session.add(nueva_biblioteca)
-        session.commit()
-        session.refresh(nueva_biblioteca)
-        print(f"hola esto es:{nueva_biblioteca}")
-        return nueva_biblioteca
+    # Asegurar que se cargan los juegos junto con la biblioteca
+    biblioteca = session.get(Biblioteca, usuario_id)    
 
-    return biblioteca
+    if not biblioteca:
+        biblioteca = Biblioteca(usuario_id=usuario_id, juegos=[])
+        session.add(biblioteca)
+        session.commit()
+        session.refresh(biblioteca)
+
+    return {
+        "usuario_id": biblioteca.usuario_id,
+        "juegos": biblioteca.juegos  # 🔹 Si no hay juegos, retorna una lista vacía
+    }
+
 
 def get_juego(session: SessionDep, usuario_id: int, juego_id: int):
     juego = session.query(BibliotecaJuegos).filter_by(usuario_id=usuario_id, juego_id=juego_id).first()

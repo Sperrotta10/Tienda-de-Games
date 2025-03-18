@@ -5,7 +5,7 @@ from src.services.biblioteca_service import get_biblioteca, get_juego, add_juego
 
 router = APIRouter(tags=["Biblioteca"])
 
-@router.get("/{usuario_id}", response_model=Biblioteca)
+@router.get("/{usuario_id}")
 def biblioteca(usuario_id: int, session: SessionDep):
     return get_biblioteca(session, usuario_id)
 
