@@ -52,6 +52,7 @@ export default function Header() {
             <li
               className={`${styles["header__user-item"]} ${styles["header__user-item--campaign"]}`}
             >
+              {/* 
               <Image
                 className={styles["header__user-icon"]}
                 src="/assets/icons/campaign.svg"
@@ -60,6 +61,7 @@ export default function Header() {
                 height={33}
                 unoptimized
               />
+              */}
             </li>
             <li
               className={`${styles["header__user-item"]} ${styles["header__user-item--cart"]}`}

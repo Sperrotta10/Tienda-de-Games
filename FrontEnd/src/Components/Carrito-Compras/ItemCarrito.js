@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function ItemCarrito({ gameID,gameName, price, imageSrc="",onRemove }) {
     const router = useRouter()
     return (
-        <div className={estilos.item_container} onClick={()=> router.push(`/juegos/${gameID}`)}>
+        <div className={estilos.item_container}>
             {/* Imagen del juego */}
             <Image 
                 src={`${imageSrc}`}
@@ -19,7 +19,7 @@ export default function ItemCarrito({ gameID,gameName, price, imageSrc="",onRemo
             />
             
             {/* Contenedor del nombre y precio */}
-            <div className={estilos.info_container}>
+            <div className={estilos.info_container}  onClick={()=> router.push(`/juegos/${gameID}`)}>
                 <h3 className={estilos.game_name}>{gameName}</h3>
                 <p className={estilos.game_price}>${price.toFixed(2)}</p>
                 
