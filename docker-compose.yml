@@ -104,7 +104,7 @@ services:
       
   biblioteca-games:
     build: ./backend/biblioteca-games
-    command: sh -c "uvicorn app:app --reload --port=2005 --host=localhost"
+    command: sh -c "uvicorn app:app --reload --port=2005 --host=0.0.0.0"
     ports:
       - "2005:2005"
     volumes:
