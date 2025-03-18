@@ -10,6 +10,7 @@ export default function ShoppingCart() {
   const { login, print, auth } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [gameImages, setGameImages] = useState({}); // 🔄 Estado para almacenar imágenes de juegos
 
   useEffect(() => {
     if (!auth.userId) return; // ⛔ Evitar la ejecución si `userId` es null/undefined
@@ -34,6 +35,31 @@ export default function ShoppingCart() {
 
     fetchItems();
   }, [auth.userId]); // 🔄 Se ejecuta cada vez que `auth.userId` cambie
+
+
+  // 🖼️ Función para obtener la imagen de un juego (si no está ya en el estado)
+  async function fetchGameImage(gameID) {
+    if (gameImages[gameID]) return; // ✅ Evita hacer la petición si ya tenemos la imagen
+
+    try {
+      const response = await fetch(`http://localhost:81/api/catalogo-games/get-game/${gameID}`);
+      if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+
+      const data = await response.json();
+      setGameImages((prevImages) => ({
+        ...prevImages,
+        [gameID]: data.data.portada,
+      }));
+    } catch (error) {
+      console.error("Error al obtener la imagen del juego:", error);
+    }
+  }
+
+  // 🔄 Obtener las imágenes cuando `currentItems` cambie
+  useEffect(() => {
+    currentItems.forEach((item) => fetchGameImage(item.juego_id));
+  }, [currentItems]);
+
 
   // 🛒 Función para eliminar un juego del carrito
     
@@ -74,6 +100,7 @@ export default function ShoppingCart() {
                 key={item.juego_id}
                 gameName={item.titulo}
                 price={item.precio_unitario}
+                imageSrc={gameImages[item.juego_id] || "/assets/icons/game-controller.png"}
                 onRemove={() => removeItemFromCart(item.id)}
               />
             ))}
