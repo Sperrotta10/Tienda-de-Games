@@ -8,6 +8,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+// Configuración de CORS
+app.use(cors({
+  origin: 'http://localhost:3000', // Permite solicitudes desde tu frontend Next.js
+  credentials: true, // Permite el envío de cookies u otras credenciales
+}));
+
 
 const whitelist = ['http://127.0.0.1:5500', process.env.CLIENT_URL];
 const options = {
@@ -19,13 +25,6 @@ const options = {
     }
   }
 }
-app.use(cors(options));
-
-// Configuración de CORS
-app.use(cors({
-  origin: 'http://localhost:3000', // Permite solicitudes desde tu frontend Next.js
-  credentials: true, // Permite el envío de cookies u otras credenciales
-})); 
 
 routerApi(app);
 
