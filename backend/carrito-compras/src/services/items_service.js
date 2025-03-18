@@ -33,32 +33,30 @@ class ItemsService {
     // Verifica si el carrito del usuario existe
     await this.carritoService.findByUserId(usuarioId);
 
-    // Busca el item en el carrito
-    const item = await models.ItemCarrito.findOne({
-      where: { usuario_id: usuarioId, juego_id: juegoId },
-    });
+    const item = await this.getItem(usuarioId, juegoId);
 
-    if (!item) {
-      throw boom.notFound('Juego no encontrado en el carrito');
-    }
-
-    // Elimina el juego del carrito
+    console.log(item);
+    // Eliminar con Sequelize directamente
     await item.destroy();
 
-    // Actualiza el total del carrito
     await this.carritoService.updateTotal(usuarioId);
 
     return { mensaje: 'Juego eliminado del carrito' };
+
   }
 
-  async getItem(usuario_id, juego_id) {
+  async getItem(usuario_id, item_id) {
     // Verifica si el carrito del usuario existe
     await this.carritoService.findByUserId(usuario_id);
 
     // Busca los items del carrito
-    const items = await models.ItemCarrito.findAll({
-      where: { juego_id: juego_id },
+    const items = await models.ItemCarrito.findOne({
+      where: { id: item_id },
     });
+
+    if (!items) {
+      throw boom.notFound('Juego no encontrado en el carrito');
+    }
 
     return items;
   }

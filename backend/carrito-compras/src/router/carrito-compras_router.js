@@ -60,12 +60,12 @@ router.post('/:usuarioId/items',
   }
 );
 
-router.get('/:usuario_id/items/:juego_id',
+router.get('/:usuario_id/items/:item_id',
   validatorHandler(getItemSchema, 'params'), // Valida ambos params
   async (req, res, next) => {
     try {
-      const { usuario_id, juego_id } = req.params;
-      const item = await itemsService.getItem(juego_id, usuario_id, req.body);
+      const { usuario_id, item_id } = req.params;
+      const item = await itemsService.getItem(usuario_id, item_id, req.body);
       res.status(201).json(item);
     } catch (error) {
       next(error);
@@ -73,12 +73,12 @@ router.get('/:usuario_id/items/:juego_id',
   }
 );
 
-router.delete('/:usuario_id/items/:juego_id',
+router.delete('/:usuario_id/items/:item_id',
   validatorHandler(getItemSchema, 'params'), // Valida ambos params
   async (req, res, next) => {
     try {
-      const { usuario_id, juego_id } = req.params;
-      res.status(201).json(await itemsService.removeItem(juego_id, usuario_id, req.body));
+      const { usuario_id, item_id } = req.params;
+      res.status(201).json(await itemsService.removeItem(usuario_id, item_id, req.body));
     } catch (error) {
       next(error);
     }
