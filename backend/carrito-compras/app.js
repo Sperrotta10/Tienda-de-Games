@@ -1,7 +1,6 @@
 require('dotenv').config(); // Importar dotenv al inicio
 const express = require('express');
 const routerApi = require('./src/router');
-const cors = require('cors');
 const swaggerDocs = require('./swagger');
 const cors = require("cors")
 const { logErrors, errorHandler, boomErrorHandler} = require('./src/middlewares/error_handler');

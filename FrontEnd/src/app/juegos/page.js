@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // Para App Router
+import styles from "@/Styles/juegos.module.css";
 
 export default function Juegos() {
   const router = useRouter();
@@ -33,18 +34,20 @@ export default function Juegos() {
   if (!games || !Array.isArray(games)) return <p>⚠️ No hay juegos disponibles.</p>;
 
   return (
-    <div>
+    <div className={styles.Search_Container}>
       <h1>🎮 Juegos Disponibles</h1>
-      <ul>
+      <ul className={styles.lista_games}>
         {games.map((game) => (
           <li
             key={game._id}
             onClick={() => router.push(`/juegos/${game._id}`)}
-            style={{ cursor: "pointer", listStyle: "none", marginBottom: "15px" }}
+            className={styles.GameCard}
           >
-            <h2 style={{ color: "white" }}>{game.titulo}</h2>
-            <p style={{ color: "white" }}>💲 {game.precio}</p>
-            <img src={game.imageUrl} alt={game.titulo} width="150" style={{ borderRadius: "10px" }} />
+            <img src={game.portada} alt={game.titulo} width="100" height={150} style={{ borderRadius: "10px" }} />
+            <div className={styles.GameCard_info}>
+              <h2 className={styles.titulo}>{game.titulo}</h2>
+              <p className={styles.precio}>💲 {game.precio}</p>
+            </div>
           </li>
         ))}
       </ul>
