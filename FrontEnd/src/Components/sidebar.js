@@ -67,8 +67,8 @@ export default function Sidebar() {
           <li onClick={logout} className={styles.navItem}>
             <Link  href="#" className={styles.navLink}>
               <Image
-                src="/assets/icons/cart.svg"
-                alt="Biblioteca"
+                src="/assets/icons/logout1.png"
+                alt="Logout"
                 width={30}
                 height={30}
                 className={styles.icon}
