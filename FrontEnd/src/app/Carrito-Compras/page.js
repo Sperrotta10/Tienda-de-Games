@@ -36,9 +36,23 @@ export default function ShoppingCart() {
   }, [auth.userId]); // 🔄 Se ejecuta cada vez que `auth.userId` cambie
 
   // 🛒 Función para eliminar un juego del carrito
-  const removeItem = (juego_id) => {
-    setCurrentItems(currentItems.filter((item) => item.juego_id !== juego_id));
-  };
+    
+    async function removeItemFromCart(itemID) {
+      try {
+        setCurrentItems(currentItems.filter((item) => item.id !== itemID));
+        const response = await fetch(`http://localhost:81/api/carrito-compras/${auth.userId}/items/${itemID}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        });
+    
+        if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+    
+        console.log("Juego eliminado del carrito");
+      } catch (error) {
+        console.error("Error al eliminar el juego del carrito:", error);
+      }
+    }
+    
 
   // 📊 Calcular el total de los precios
   const totalPrice = useMemo(
@@ -60,8 +74,7 @@ export default function ShoppingCart() {
                 key={item.juego_id}
                 gameName={item.titulo}
                 price={item.precio_unitario}
-                imageSrc={item.imageSrc}
-                onRemove={() => removeItem(item.juego_id)}
+                onRemove={() => removeItemFromCart(item.id)}
               />
             ))}
           </div>
