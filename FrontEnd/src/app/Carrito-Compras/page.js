@@ -99,6 +99,7 @@ export default function ShoppingCart() {
             {currentItems.map((item) => (
               <ItemCarrito
                 key={item.juego_id}
+                gameID={item.juego_id}
                 gameName={item.titulo}
                 price={item.precio_unitario}
                 imageSrc={gameImages[item.juego_id] || "/assets/icons/game-controller.png"}

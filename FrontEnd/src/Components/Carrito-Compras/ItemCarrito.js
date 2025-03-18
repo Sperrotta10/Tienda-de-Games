@@ -1,9 +1,11 @@
 import Image from "next/image";
 import estilos from "../../Styles/Carrito-Compras/Carrito.module.css";
+import { useRouter } from "next/navigation";
 
-export default function ItemCarrito({ gameName, price, imageSrc="",onRemove }) {
+export default function ItemCarrito({ gameID,gameName, price, imageSrc="",onRemove }) {
+    const router = useRouter()
     return (
-        <div className={estilos.item_container}>
+        <div className={estilos.item_container} onClick={()=> router.push(`/juegos/${gameID}`)}>
             {/* Imagen del juego */}
             <Image 
                 src={`${imageSrc}`}
