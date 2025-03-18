@@ -134,6 +134,9 @@
 .buy_button:hover {
   background-color: #640696 !important; /* 🔥 Mantiene el color fijo */
   box-shadow: 0px 0px 20px var(--color-dark-purple); 
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+
+
 }
 
   .footer_game{
@@ -196,6 +199,8 @@
   padding: 10px;
   gap: 15px;
   align-items: self-start; /* Asegura alineación */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  transition: transform 0.2s ease-in-out; /* Agrega una animación */
 }
 
 .GameCard_info {
@@ -233,5 +238,9 @@
   gap: 20px;
   padding-top: 20px;
   align-items: center;
+}
+
+.GameCard:hover {
+  transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
 }
   
