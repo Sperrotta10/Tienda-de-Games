@@ -13,10 +13,10 @@ export default function Sidebar() {
       <div className={styles.logo}>
         <Link href="/">
           <Image
-            src="/assets/icons/search.svg"
+            src="/assets/icons/main_icon1.png"
             alt="Logo"
-            width={40}
-            height={40}
+            width={60}
+            height={60}
             className={styles.icon}
           />
         </Link>

@@ -2,13 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 60px;
+  width: 70px;
+  padding-top: 10px;
   height: 100vh;
   background-color: var(--color-dark);
   color: white;
   transition: width 0.3s ease-in-out;
   z-index: 1000;
   overflow: hidden;
+  align-items: center;
 }
 
 .sidebar:hover {
@@ -26,7 +28,7 @@
 }
 
 .logo img {
-  width: 40px;
+  width: 60px;
   height: auto;
 }
 
@@ -76,7 +78,7 @@
 
 /* 🔥 Mantiene la imagen SIEMPRE visible */
 .navItem img {
-  width: 24px;
+  width: 30px;
   height: auto;
 }
 
