@@ -2,11 +2,20 @@
 import styles from "../Styles/header/style.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "@/utils/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const { auth } = useContext(AuthContext);
+  const [ searchTerm, setSearchTerm ] = useState("");
+  const router = useRouter();
+
+  const handleSearch = () => {
+    const encodedSearch = encodeURIComponent(searchTerm);
+    router.push(`/busqueda?query=${encodedSearch}`);
+  }
+
   return (
     <header className={styles.header}>
       <ul className={styles["header__list"]}>
@@ -19,6 +28,8 @@ export default function Header() {
               className={styles["header__search-input"]}
               type="text"
               placeholder="Buscar"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             <Image
               className={styles["header__search-icon"]}
@@ -27,6 +38,7 @@ export default function Header() {
               width={24}
               height={24}
               unoptimized
+              onClick={handleSearch}
             />
           </div>
         </li>
