@@ -37,6 +37,7 @@ export default function Sidebar() {
         </li>
 
         <li className={styles.navItem}>
+        <Link href="/juegos" className={styles.navLink}>
           <Image
             src="/assets/icons/cart.svg"
             alt="Juegos"
@@ -45,6 +46,7 @@ export default function Sidebar() {
             className={styles.icon}
           />
           <span>Juegos</span>
+          </Link>
         </li>
 
         <li className={styles.navItem}>
