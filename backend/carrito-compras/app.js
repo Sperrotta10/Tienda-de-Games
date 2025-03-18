@@ -3,7 +3,7 @@ const express = require('express');
 const routerApi = require('./src/router');
 const cors = require('cors');
 const swaggerDocs = require('./swagger');
-
+const cors = require("cors")
 const { logErrors, errorHandler, boomErrorHandler} = require('./src/middlewares/error_handler');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,6 +21,12 @@ const options = {
   }
 }
 app.use(cors(options));
+
+// Configuración de CORS
+app.use(cors({
+  origin: 'http://localhost:3000', // Permite solicitudes desde tu frontend Next.js
+  credentials: true, // Permite el envío de cookies u otras credenciales
+})); 
 
 routerApi(app);
 
