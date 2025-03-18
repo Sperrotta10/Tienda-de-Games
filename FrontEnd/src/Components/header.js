@@ -13,6 +13,7 @@ export default function Header() {
 
   const handleSearch = () => {
     const encodedSearch = encodeURIComponent(searchTerm);
+    setSearchTerm("");
     router.push(`/busqueda?query=${encodedSearch}`);
   }
 
