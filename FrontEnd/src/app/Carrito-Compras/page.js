@@ -1,44 +1,53 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useContext, useEffect } from "react";
 import estilos from "../../Styles/Carrito-Compras/Carrito.module.css";
 import ItemCarrito from "../../Components/Carrito-Compras/ItemCarrito";
 import ProtectedRoute from "@/utils/ProtectedRoute";
+import { AuthContext } from "../../utils/AuthContext";
 
 export default function ShoppingCart() {
-  const [currentItems, setCurrentItems] = useState([
-    {
-      id: 1,
-      gameName: "Fifa 25",
-      imageSrc: "fifa25_horizontal.jpeg",
-      price: 59.99,
-    },
-    {
-      id: 2,
-      gameName: "Monster Hunter Wilds",
-      imageSrc: "mh_wilds.webp",
-      price: 69.99,
-    },
-    {
-      id: 3,
-      gameName: "Mortal Kombat 1",
-      imageSrc: "Mortal_Kombat_1.webp",
-      price: 49.99,
-    },
-    { id: 4, gameName: "Lol", imageSrc: "lol.png", price: 22.0 },
-    { id: 5, gameName: "Dragon Ball", imageSrc: "kokun.png", price: 39.99 },
-    { id: 6, gameName: "El bicho", imageSrc: "siuu.jpeg", price: 9.99 },
-  ]);
+  const [currentItems, setCurrentItems] = useState([]);
+  const { login, print, auth } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!auth.userId) return; // ⛔ Evitar la ejecución si `userId` es null/undefined
+
+    async function fetchItems() {
+      setLoading(true); // 🔄 Mostrar carga al iniciar la petición
+      try {
+        const response = await fetch(`http://localhost:81/api/carrito-compras/${auth.userId}`);
+
+        if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+
+        const data = await response.json();
+        setCurrentItems(data.items);
+        console.log(data.items)
+      } catch (error) {
+        console.error("Error al obtener los items:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false); // 🔄 Ocultar carga al finalizar
+      }
+    }
+
+    fetchItems();
+  }, [auth.userId]); // 🔄 Se ejecuta cada vez que `auth.userId` cambie
 
   // 🛒 Función para eliminar un juego del carrito
-  const removeItem = (id) => {
-    setCurrentItems(currentItems.filter((item) => item.id !== id));
+  const removeItem = (juego_id) => {
+    setCurrentItems(currentItems.filter((item) => item.juego_id !== juego_id));
   };
 
   // 📊 Calcular el total de los precios
   const totalPrice = useMemo(
-    () => currentItems.reduce((acc, item) => acc + item.price, 0).toFixed(2),
+    () => currentItems.reduce((acc, item) => acc + item.precio_unitario, 0).toFixed(2),
     [currentItems]
   );
+
+  if (loading) return <p>🔄 Cargando juego...</p>;
+  if (error) return <p>❌ Error: {error}</p>;
 
   return (
     <ProtectedRoute>
@@ -48,11 +57,11 @@ export default function ShoppingCart() {
           <div className={estilos.left_side}>
             {currentItems.map((item) => (
               <ItemCarrito
-                key={item.id}
-                gameName={item.gameName}
-                price={item.price}
+                key={item.juego_id}
+                gameName={item.titulo}
+                price={item.precio_unitario}
                 imageSrc={item.imageSrc}
-                onRemove={() => removeItem(item.id)} // ✅ Pasamos la función
+                onRemove={() => removeItem(item.juego_id)}
               />
             ))}
           </div>
@@ -66,7 +75,7 @@ export default function ShoppingCart() {
               </p>
             </div>
             <button className={estilos.checkout_button}>
-              Continuar con el pago
+              Pagar
             </button>
           </div>
         </div>
