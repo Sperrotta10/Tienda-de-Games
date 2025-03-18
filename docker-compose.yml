@@ -104,11 +104,12 @@ services:
       
   biblioteca-games:
     build: ./backend/biblioteca-games
-    command: sh -c "uvicorn app:app --reload --port=2005 --host=0.0.0.0"
+    command: sh -c "uvicorn app:app --workers 4 --port=2005 --host=0.0.0.0"
     ports:
       - "2005:2005"
     volumes:
       - ./backend/biblioteca-games:/app
+      - biblioteca_games_data:/app/data
   nginx:
     image: nginx:latest
     ports:
@@ -126,3 +127,4 @@ volumes:
   mysql_data:
   mongodb_data3:
   postgres_data:
+  biblioteca_games_data:
