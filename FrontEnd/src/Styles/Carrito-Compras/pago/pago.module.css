@@ -1,0 +1,101 @@
+.pago-container{
+    min-height: calc(100dvh - 74px);
+    display: grid;
+    place-content: center;
+}
+
+.pago-form {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--color-gray);
+    border-radius: 10px;
+    padding: 3rem;
+    max-width: clamp(300px, 70vw, 650px);
+    width: 100vw;
+    transform: translate(0, 0px);
+}
+
+.pago-title{
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.pago-texto {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.pago-container-tarjetas {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    /* justify-content: space-between; */
+}
+
+.pago-tarjeta-image{
+    width: 60;
+    height: 35;
+    transform: scale(1);
+    transition: transform .25s;
+}
+.pago-tarjeta-image:hover{
+    transform: scale(1.1);
+}
+
+.pago-container-inputs{
+    width: 100%;
+    border: solid 1px var(--color-light-purple);
+    padding: 2rem;
+    padding-bottom: 1rem;   
+    border-radius: 10px;
+}
+
+.pago-title-inputs{
+    color: var(--color-white);
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.pago-inputs-double{
+    display: flex;
+    flex-direction: column;
+}
+.pago-inputs-double label {
+    margin-bottom: 1rem;
+    color: #a1a1a1;
+    color: var(--color-white);
+    font-size: .85rem;
+}
+
+.pago-inputs-double input {
+    outline: none;
+    background-color: var(--color-dark);
+    height: 2.25rem;
+    width: 100%; /* 350 */
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--color-light-purple);
+    border: none;
+    border: var(--color-gray) 1px solid;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+/* .pago-input-fecha{
+    color: var(--color-white) !important;
+} */
+
+.pago-boton{
+    background-color: var(--color-medium-purple);
+    color: var(--color-white);
+    padding: .75rem;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
