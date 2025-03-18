@@ -1,5 +1,7 @@
 import Header from "../Components/header";
 import Sidebar from "../Components/sidebar";
+import Footer from "../Components/Footer";
+
 /* import "../Styles/style.css"; */
 import { inter } from "../fonts/fonts";
 import "../Styles/globalStyles.css";
@@ -29,6 +31,8 @@ export default function RootLayout({ children }) {
             <div className="mainContent">
               <Header />
               <main className="main">{children}</main>
+              <Footer />
+
             </div>
           </div>
         </AuthProvider>
