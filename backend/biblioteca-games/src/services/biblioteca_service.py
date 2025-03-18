@@ -22,11 +22,16 @@ def get_biblioteca(session: SessionDep, usuario_id: int):
 
 
 def get_juego(session: SessionDep, usuario_id: int, juego_id: int):
-    juego = session.query(BibliotecaJuegos).filter_by(usuario_id=usuario_id, juego_id=juego_id).first()
-    
+    # Consultar el juego filtrando por usuario_id y juego_id
+    stmt = select(BibliotecaJuegos).where(
+        BibliotecaJuegos.usuario_id == usuario_id,
+        BibliotecaJuegos.juego_id == juego_id
+    )
+    juego = session.exec(stmt).first()
+
     if not juego:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Juego no encontrado")
-    
+        raise HTTPException(status_code=404, detail="Juego no encontrado")
+
     return juego
 
 def add_juego(session: SessionDep, usuario_id: int, juego: BibliotecaJuegos):
