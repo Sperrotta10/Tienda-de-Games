@@ -3,6 +3,7 @@ from src.db.database import SessionDep
 from src.db.models.biblioteca_model import Biblioteca, BibliotecaJuegos
 from sqlalchemy.orm import joinedload  # 🔹 Importarlo desde SQLAlchemy
 from sqlmodel import select
+from src.schemas.pedido_schema import PedidoSchema
 
 
 def get_biblioteca(session: SessionDep, usuario_id: int):
@@ -34,11 +35,14 @@ def get_juego(session: SessionDep, usuario_id: int, juego_id: int):
 
     return juego
 
-def add_juegos(session: SessionDep, usuario_id: int, juegos: list[BibliotecaJuegos]):
-    # 1. Validar duplicados en la solicitud
-    ids_juegos_solicitud = [j.juego_id for j in juegos]
-    
-    # Si hay IDs repetidos en el mismo request
+def add_juegos(session: SessionDep, usuario_id: int, pedido: PedidoSchema):
+    # 1. Validar el status del pedido
+    if pedido.status_pedido != "aceptado":
+        # Si el status no es "aceptado", no se inserta nada en la base de datos.
+        return []  # También podrías retornar un mensaje, según tus necesidades.
+
+    # 2. Validar duplicados en la solicitud
+    ids_juegos_solicitud = [j.juego_id for j in pedido.juegos]
     if len(ids_juegos_solicitud) != len(set(ids_juegos_solicitud)):
         duplicados = {x for x in ids_juegos_solicitud if ids_juegos_solicitud.count(x) > 1}
         raise HTTPException(
@@ -46,13 +50,12 @@ def add_juegos(session: SessionDep, usuario_id: int, juegos: list[BibliotecaJueg
             detail=f"Error: Juego IDs duplicados en la solicitud: {duplicados}"
         )
 
-    # 2. Validar juegos ya existentes en la base de datos
+    # 3. Validar juegos ya existentes en la base de datos
     stmt_existentes = select(BibliotecaJuegos).where(
         BibliotecaJuegos.usuario_id == usuario_id,
         BibliotecaJuegos.juego_id.in_(ids_juegos_solicitud)
     )
-    juegos_existentes = session.exec(stmt_existentes).all()
-    
+    juegos_existentes = session.exec(stmt_existentes).all()    
     if juegos_existentes:
         ids_existentes = {j.juego_id for j in juegos_existentes}
         raise HTTPException(
@@ -60,7 +63,7 @@ def add_juegos(session: SessionDep, usuario_id: int, juegos: list[BibliotecaJueg
             detail=f"Error: Juegos ya existen en la biblioteca (IDs: {ids_existentes})"
         )
 
-    # 3. Crear biblioteca si no existe (esto va DESPUÉS de las validaciones)
+    # 4. Crear la biblioteca si no existe (después de las validaciones)
     biblioteca = session.get(Biblioteca, usuario_id)
     if not biblioteca:
         biblioteca = Biblioteca(usuario_id=usuario_id)
@@ -68,9 +71,9 @@ def add_juegos(session: SessionDep, usuario_id: int, juegos: list[BibliotecaJueg
         session.commit()
         session.refresh(biblioteca)
 
-    # 4. Insertar nuevos juegos
+    # 5. Insertar nuevos juegos
     nuevos_juegos = []
-    for juego in juegos:
+    for juego in pedido.juegos:
         nuevo_juego = BibliotecaJuegos(
             titulo=juego.titulo,
             juego_id=juego.juego_id,
@@ -78,11 +81,11 @@ def add_juegos(session: SessionDep, usuario_id: int, juegos: list[BibliotecaJueg
         )
         session.add(nuevo_juego)
         nuevos_juegos.append(nuevo_juego)
-    
-    # 5. Commit único para mejor performance
+
+    # Commit único para insertar todos los juegos
     session.commit()
 
-    # 6. Refrescar objetos (opcional, solo si necesitas datos post-insert)
+    # Refrescar cada objeto para obtener datos actualizados (opcional)
     for juego in nuevos_juegos:
         session.refresh(juego)
         
