@@ -1,4 +1,4 @@
-
+//Este archivo no se usa
 
 
 import Offers from "./offerts";
