@@ -13,10 +13,10 @@ export default function Sidebar() {
       <div className={styles.logo}>
         <Link href="/">
           <Image
-            src="/assets/icons/search.svg"
+            src="/assets/icons/main_icon1.png"
             alt="Logo"
-            width={40}
-            height={40}
+            width={60}
+            height={60}
             className={styles.icon}
           />
         </Link>
@@ -26,7 +26,7 @@ export default function Sidebar() {
         <li className={styles.navItem}>
           <Link href="/" className={styles.navLink}>
             <Image
-              src="/assets/icons/cart.svg"
+              src="/assets/icons/home.png"
               alt="Inicio"
               width={30}
               height={30}
@@ -37,20 +37,22 @@ export default function Sidebar() {
         </li>
 
         <li className={styles.navItem}>
+        <Link href="/juegos" className={styles.navLink}>
           <Image
-            src="/assets/icons/cart.svg"
+            src="/assets/icons/game-controller.png"
             alt="Juegos"
             width={30}
             height={30}
             className={styles.icon}
           />
           <span>Juegos</span>
+          </Link>
         </li>
 
         <li className={styles.navItem}>
           <Link href="/biblioteca" className={styles.navLink}>
             <Image
-              src="/assets/icons/cart.svg"
+              src="/assets/icons/library1.png"
               alt="Biblioteca"
               width={30}
               height={30}
