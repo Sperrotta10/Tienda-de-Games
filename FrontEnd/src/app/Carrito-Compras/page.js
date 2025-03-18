@@ -58,6 +58,7 @@ export default function ShoppingCart() {
   // 🔄 Obtener las imágenes cuando `currentItems` cambie
   useEffect(() => {
     currentItems.forEach((item) => fetchGameImage(item.juego_id));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentItems]);
 
 
