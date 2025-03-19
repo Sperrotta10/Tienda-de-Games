@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 2005
 
 # Comando para iniciar la aplicación
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "2005"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "2005"]
