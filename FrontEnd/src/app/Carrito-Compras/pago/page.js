@@ -1,7 +1,35 @@
 'use client';
+import { useState, useMemo, useContext, useEffect } from "react";
 import Image from "next/image";
+import { AuthContext } from "@/utils/AuthContext";
 import style from "@/Styles/Carrito-Compras/pago/pago.module.css"
 export default function PagePago() {
+    const [currentItems, setCurrentItems] = useState([]);
+    const { login, print, auth } = useContext(AuthContext);
+    
+    useEffect(() => {
+        if (!auth.userId) return; // ⛔ Evitar la ejecución si `userId` es null/undefined
+
+        async function fetchItems() {
+            
+            try {
+                const response = await fetch(`http://localhost:81/api/carrito-compras/${auth.userId}`);
+
+                if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+
+                const data = await response.json();
+                setCurrentItems(data.items);
+                console.log(data.items)
+            } catch (error) {
+                console.error("Error al obtener los items:", error);
+                setError(error.message);
+            }
+        }
+
+        fetchItems();
+    }, [auth.userId]); // 🔄 Se ejecuta cada vez que `auth.userId` cambie
+
+     console.log(currentItems);
 
     function onClickTarjeta(event) {
         // Verificamos si el elemento clicado es válido
