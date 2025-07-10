@@ -1,0 +1,133 @@
+.header{
+    position: sticky;
+    z-index: 5;
+    /* max-width: 90%; */
+    margin: 0 auto;
+    top: 0;
+    background-color: var(--color-dark);
+    max-width: clamp(1000px, 90%, 1600px);
+}
+
+.header__list{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 1rem;
+/*     width: 90%; */
+    font-weight: bold;
+    align-content: stretch;
+    margin: 0 auto;
+}
+
+
+
+.header__user{
+    display: flex;
+    gap: 2rem;
+
+}
+
+.header__user-item--info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__user-img{
+    max-width: 50px;
+    width: 100%;
+    border-radius: 50%;
+    padding: .75rem 0;
+    box-sizing: content-box;
+}
+
+.header__user-item--cart, .header__user-item--campaign{
+    display: grid;
+    place-content: center;
+}
+.header__user-icon{
+    box-sizing: content-box;
+}
+
+.header__item--center{
+    display: grid;
+    place-content: center;
+}
+
+.header__search{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header__search-input{
+    outline: none;
+    background-color: var(--color-dark);
+    height: 2.25rem;
+    width: clamp(225px, 30vw, 350px); /* 350 */
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--color-light-purple);
+    border: none;
+    border: var(--color-gray) 1px solid;
+    padding: .75rem 1rem;
+}
+
+.header__search-icon{
+    position: absolute;
+    right: .375rem;
+    cursor: pointer;
+}
+
+.header__nav{
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.header__nav-item{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header__dropdown{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    list-style: none;
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    border: solid 1px var(--color-light-purple);
+/*     border-radius: 5px; */
+    width: max-content;
+    
+}
+.header__nav-item--dropdown:hover .header__dropdown{
+    display: block;
+}
+
+.header__dropdown-item{
+    padding: .5rem 1rem;
+}
+
+.header__dropdown-item:hover{
+    background-color: var(--color-light-purple);
+}
+
+.no_underline{
+    text-decoration: none;
+    color: var(--color-light-purple);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.no_underline:hover{
+    text-decoration: none;
+    color: var(--color-light-purple);
+    transform: translateY(-3px); /* Mueve la imagen 10px hacia arriba */
+    text-shadow: 0px 1px 30px var(--color-dark-purple); /* Sombra más difusa */
+
+}

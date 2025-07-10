@@ -1,0 +1,128 @@
+services:
+
+  postgres:
+    image: postgres:13
+    container_name: e-commerce-carro-compras
+    environment:
+      - POSTGRES_DB=carro_compras
+      - POSTGRES_USER=jesus
+      - POSTGRES_PASSWORD=root
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+  carrito-compras:
+    build: "./backend/carrito-compras"
+    ports:
+      - "2000:2000"
+    environment:
+    - PORT=${PORT}
+    - DB_USER=${DB_USER}
+    - DB_PASSWORD=${DB_PASSWORD}
+    - DB_HOST=${DB_HOST}
+    - DB_NAME=${DB_NAME}
+    - DB_PORT=${DB_PORT}
+    depends_on:
+    - postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=ROOT
+    ports:
+      - 5050:80
+
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  catalogo-games:
+    build: ./backend/catalogo-games
+    ports:
+      - "2001:2001"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=${MONGO_URI_GAMES}
+
+  mongodb3:
+    image: mongo:4.4
+    container_name: mongodb3
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodb_data3:/data/db
+
+  gestion-pedidos:
+    build: ./backend/gestion-pedidos
+    ports:
+      - "2003:2003"
+    depends_on:
+      - mongodb3
+    environment:
+      - MONGO_URI=${MONGO_URI_PEDIDOS}
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${USERS_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${USERS_MYSQL_DATABASE}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p", "rootpassword"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  gestion-usuarios:
+    build:
+      context: ./backend/gestion-usuarios
+    ports:
+      - "2004:2004"
+    volumes:
+      - ./backend/gestion-usuarios:/app
+    environment:
+      PORT: ${USERS_PORT}
+      DB_PORT: ${USERS_DB_PORT}
+      DB_HOST: ${USERS_DB_HOST}
+      DB_NAME: ${USERS_DB_NAME}
+      DB_USER: ${USERS_DB_USER}
+      DB_PASSWORD: ${USERS_DB_PASSWORD}
+      SALT_ROUNDS: ${USERS_SALT_ROUNDS}
+      ACCESS_SECRET_KEY: ${USERS_ACCESS_SECRET_KEY}
+      REFRESH_SECRET_KEY: ${USERS_REFRESH_SECRET_KEY}
+    depends_on:
+      - mysql 
+      
+  biblioteca-games:
+    build: ./backend/biblioteca-games
+    command: sh -c "uvicorn app:app --reload --port=2005 --host=0.0.0.0"
+    ports:
+      - "2005:2005"
+    volumes:
+      - ./backend/biblioteca-games:/app
+  nginx:
+    image: nginx:latest
+    ports:
+      - "81:81"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - gestion-usuarios
+      - catalogo-games
+      - gestion-pedidos
+      - carrito-compras
+
+volumes:
+  mongodb_data:
+  mysql_data:
+  mongodb_data3:
+  postgres_data:

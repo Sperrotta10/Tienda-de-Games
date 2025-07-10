@@ -1,0 +1,55 @@
+.dropbox {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.dropboxButton {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-ligth-purple);
+  border: 1px solid var(--color-medium-purple-transparent);
+  border-radius: 5px;
+  color: var(--color-ligth-purple);
+  box-shadow: 0px 0px 10px var(--color-medium-purple-transparent);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Para que quede por encima del menú */
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Cuando el menú está abierto, la flecha gira */
+.dropboxButton.open .arrow {
+  transform: rotate(180deg);
+}
+
+.dropboxMenu {
+  position: absolute;
+  top: 100%; /* Lo coloca justo debajo del botón */
+  left: 0;
+  width: 100%;
+  background: var(--color-dark); /* 📌 Fondo oscuro */
+  border: 1px solid #333;
+  box-shadow: 0px 5px 10px var(--color-medium-purple-transparent);
+  list-style: none;
+  padding: 0;
+  margin-top: 5px; /* Pequeño margen para separar */
+  z-index: 20;
+}
+
+.dropboxItem {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropboxItem:hover {
+  background: #f0f0f0;
+}
